@@ -1,0 +1,52 @@
+{% macro buildAmmount (ammount) %}
+	{% set currency = ammount.currency %}
+	{% set currencySymbol = currency.symbol %}
+	{% set ammountValue = ammount.value %}
+	{% set currencyName = currency.name | capitalize %}
+	{% set currencyAbbreviation = currency.abbr | upper %}
+	{% set billed = (ammount.billed | lower) if ammount.billed %}
+	<div class='ammount{{ (" billed-" + billed) if billed }}' title='{{ currencySymbol }}{{ ammountValue }} {{ currencyName }}{{ (" billed " + billed) if billed }}'>
+		<span class='currency-symbol'>{{ currencySymbol }}</span><span class='value'>{{ ammountValue }}</span>
+		{%- if billed %}
+			/<abbr title='{{ billed | title }}' class='billed-abbr'>{{ billed | first | upper }}</abbr>
+		{% else %}
+			<abbr class='currency-abbr' title='{{ currencyName | title }}'>{{ currencyAbbreviation }}</abbr>
+		{% endif %}
+	</div>
+{% endmacro %}
+<aside id='donation-box' data-theme='compact'>
+	<h1>Donations</h1>
+	<ol class='donations'>
+		{% for donation in donations %}
+			{% set type = donation.type %}
+			{% set href = donation.href %}
+			{% set title = donation.title %}
+			{% set ammounts = donation.ammounts %}
+			{% if type == 'one-off' %}
+				{% set ammount = ammounts | first %}
+				{% set ammountHref = ammount.href %}
+				<li class='donation one-off-donation'>
+					{# @FIXME [Nunjucks bug] Calling a macro (using call()/caller()) won't pass variables defined in this scope, inside the call() block. #}
+					<a class='external-link' href='{{ ammountHref if ammountHref else href }}' target='{{ "_blank" if openInNewWindow else "_self" }}' rel='noopener noreferrer'>
+						{{ buildAmmount(ammount) }}
+						<span class='title'>{{ title }}</span>
+					</a>
+				</li>
+			{% elseif type == 'recurrent' %}
+				<li class='donation recurrent-donation'>
+					<span class='title'>{{ title }}</span>
+					<ul class='ammounts'>
+						{% for ammount in ammounts %}
+							{% set ammountHref = ammount.href %}
+							<li class='ammount'>
+								<a class='external-link' href='{{ ammountHref if ammountHref else href }}' target='{{ "_blank" if openInNewWindow else "_self" }}' rel='noopener noreferrer'>
+									{{ buildAmmount(ammount) }}
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</li>
+			{% endif %}
+		{% endfor %}
+	</ol>
+</aside>
