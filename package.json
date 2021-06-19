@@ -6,6 +6,7 @@
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
+    "watch": "precise-watcher --config precise-watcher.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
