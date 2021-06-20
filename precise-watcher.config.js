@@ -3,7 +3,7 @@ module.exports = {
 		'pattern': 'public',
 		'on': 'ready',
 		'run': [{
-			'cmd': 'serve',
+			'cmd': 'live-server',
 			'args': ['public'],
 		}]
 	}, {
