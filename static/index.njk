@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset='utf-8'/>
-	<title>Donation Box - Example</title>
-</head>
-<body>
+{% set title = 'Example' %}
+{% extends './.njk/layouts/index.njk' %}
+{% block body %}
 	{% include './.njk/donation-box.njk' %}
-</body>
-</html>
+{% endblock %}
