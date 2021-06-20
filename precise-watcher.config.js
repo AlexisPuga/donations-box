@@ -7,7 +7,7 @@ module.exports = {
 			'args': ['public'],
 		}]
 	}, {
-		'pattern': ['static/**/*', 'static/.njk/**/*', 'nunjucks.config.js'],
+		'pattern': ['static/**/*.njk', 'static/.njk/**/*.njk', 'nunjucks.config.js'],
 		'on': ['ready', 'change'],
 		'run': [{
 			'cmd': 'nunjucks-to-html',
