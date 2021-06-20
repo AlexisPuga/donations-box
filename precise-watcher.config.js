@@ -11,7 +11,7 @@ module.exports = {
 		'on': ['ready', 'change'],
 		'run': [{
 			'cmd': 'nunjucks-to-html',
-			'args': ['**/*', '--baseDir', 'static']
+			'args': ['*.njk', '--baseDir', 'static']
 		}]
 	}]
 };
