@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Donation Example - Donation Box</title>
-</head>
-<body>
+{% set title = 'Donation Example' %}
+{% extends './.njk/layouts/index.njk' %}
+{% block body %}
 	<p><strong>This page won't be shown.</strong></p>
 	<p>This is an external page that includes your product and some payment options. This is where your visitor actually donates.</p>
-</body>
-</html>
+{% endblock %}
