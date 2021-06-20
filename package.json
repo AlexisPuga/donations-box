@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/AlexisPuga/donation-box#readme",
   "devDependencies": {
+    "live-server": "^1.2.1",
     "nunjucks-to-html": "^1.0.1",
     "precise-watcher": "^1.0.1",
     "serve": "^12.0.0"
