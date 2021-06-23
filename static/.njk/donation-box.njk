@@ -22,14 +22,14 @@
 				<li class='donation recurrent-donation'>
 					<span class='title'>{{ title }}</span>
 					<ul class='ammounts'>
-						{% for ammount in ammounts %}
-							{% set ammountHref = ammount.href %}
+						{%- for ammount in ammounts -%}
+							{%- set ammountHref = ammount.href -%}
 							<li class='ammount'>
 								<a class='external-link' href='{{ ammountHref if ammountHref else href }}' target='{{ "_blank" if openInNewWindow else "_self" }}' rel='noopener noreferrer'>
 									{{ buildAmmount(ammount) }}
 								</a>
 							</li>
-						{% endfor %}
+						{%- endfor -%}
 					</ul>
 				</li>
 			{% endif %}
