@@ -2,6 +2,11 @@
 	list-style: none;
 }
 
+/** Add gray border to items. */
+.d10x-c .donation {
+	border: 1px solid #eee;
+}
+
 /* Show ammount(s) and title inline. */
 .d10x-c .donation * {
 	display: inline-block;
