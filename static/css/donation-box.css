@@ -12,8 +12,9 @@
 	list-style: none;
 }
 
-/** Add gray border to items. */
-.d10x-c .donation {
+/** Add gray border to items and ammounts. */
+.d10x-c .donation,
+.d10x-c .donation .ammount {
 	border: 1px solid #eee;
 }
 
