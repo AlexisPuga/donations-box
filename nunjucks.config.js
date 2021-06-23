@@ -40,22 +40,22 @@ module.exports = {
 				'amounts': [{
 					'href': '/donate.html',
 					'value': 3,
-					'billed': 'Daily',
+					'periodicity': 'Daily',
 					'currency': dollars
 				}, {
 					'href': '/donate.html',
 					'value': 3 * 7,
-					'billed': 'Weekly',
+					'periodicity': 'Weekly',
 					'currency': dollars
 				}, {
 					'href': '/donate.html',
 					'value': 3 * 30,
-					'billed': 'Monthly',
+					'periodicity': 'Monthly',
 					'currency': dollars
 				}, {
 					'href': '/donate.html',
 					'value': 3 * 365,
-					'billed': 'Yearly',
+					'periodicity': 'Yearly',
 					'currency': dollars
 				}]
 			}]
