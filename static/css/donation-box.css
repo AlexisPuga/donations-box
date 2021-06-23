@@ -43,3 +43,7 @@
 .d10x-c .donation a {
 	display: block;
 }
+
+.d10x-c .donation .optional.currency-name {
+	font-size: .6em;
+}
