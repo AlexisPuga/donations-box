@@ -13,9 +13,9 @@
 				{% set amountHref = amount.href %}
 				<li class='donation one-off-donation'>
 					{# @FIXME [Nunjucks bug] Calling a macro (using call()/caller()) won't pass variables defined in this scope, inside the call() block. #}
+					<span class='title'>{{ title }}</span>
 					<a class='external-link' href='{{ amountHref if amountHref else href }}' target='{{ "_blank" if openInNewWindow else "_self" }}' rel='noopener noreferrer'>
 						{{ buildAmount(amount) }}
-						<span class='title'>{{ title }}</span>
 					</a>
 				</li>
 			{% elseif type == 'recurrent' %}
