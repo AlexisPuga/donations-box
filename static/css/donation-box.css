@@ -7,3 +7,8 @@
 	display: inline-block;
 	vertical-align: middle;
 }
+
+/* Make clickable things bigger. */
+.d10x-c .donation a {
+	padding: 1em;
+}
