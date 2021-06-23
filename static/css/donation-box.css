@@ -16,6 +16,8 @@
 .d10x-c .donation,
 .d10x-c .donation .amount {
 	border: 1px solid #eee;
+	/* Overlap borders */
+	margin: -1px;
 }
 
 /* Show amount(s) and title inline. */
