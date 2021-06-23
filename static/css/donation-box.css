@@ -1,0 +1,9 @@
+.d10x-c .donations {
+	list-style: none;
+}
+
+/* Show ammount(s) and title inline. */
+.d10x-c .donation * {
+	display: inline-block;
+	vertical-align: middle;
+}
