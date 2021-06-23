@@ -13,7 +13,7 @@ module.exports = {
 				'type': 'one-off',
 				'href': '/donate.html',
 				'title': 'Buy me 1 coffee',
-				'ammounts': [{
+				'amounts': [{
 					'value': 3,
 					'currency': dollars
 				}]
@@ -21,7 +21,7 @@ module.exports = {
 				'type': 'one-off',
 				'href': '/donate.html',
 				'title': 'Buy me 2 coffees',
-				'ammounts': [{
+				'amounts': [{
 					'value': 6,
 					'currency': dollars
 				}]
@@ -29,14 +29,14 @@ module.exports = {
 				'type': 'one-off',
 				'href': '/donate.html',
 				'title': 'Buy me 3 coffees',
-				'ammounts': [{
+				'amounts': [{
 					'value': 9,
 					'currency': dollars
 				}]
 			}, {
 				'type': 'recurrent',
 				'title': 'Buy me a daily coffee',
-				'ammounts': [{
+				'amounts': [{
 					'href': '/donate.html',
 					'value': 3,
 					'billed': 'Daily',

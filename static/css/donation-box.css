@@ -12,9 +12,9 @@
 	list-style: none;
 }
 
-/** Add gray border to items and ammounts. */
+/** Add gray border to items and amounts. */
 .d10x-c .donation,
-.d10x-c .donation .ammount {
+.d10x-c .donation .amount {
 	border: 1px solid #eee;
 }
 
@@ -23,13 +23,13 @@
 	padding-left: 1em;
 }
 
-/* Show ammount(s) and title inline. */
+/* Show amount(s) and title inline. */
 .d10x-c .donation * {
 	display: inline-block;
 	vertical-align: middle;
 }
 
 /* Make clickable things bigger. */
-.d10x-c .donation .ammount {
+.d10x-c .donation .amount {
 	padding: 1em;
 }

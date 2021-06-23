@@ -1,4 +1,4 @@
-{% from './lib/build-ammount.njk' import buildAmmount %}
+{% from './lib/build-amount.njk' import buildAmount %}
 <link rel='stylesheet' href='/css/donation-box.min.css'/>
 <aside id='donation-box' data-theme='compact' class='d10x-c'>
 	<h1>Donations</h1>
@@ -7,14 +7,14 @@
 			{% set type = donation.type %}
 			{% set href = donation.href %}
 			{% set title = donation.title %}
-			{% set ammounts = donation.ammounts %}
+			{% set amounts = donation.amounts %}
 			{% if type == 'one-off' %}
-				{% set ammount = ammounts | first %}
-				{% set ammountHref = ammount.href %}
+				{% set amount = amounts | first %}
+				{% set amountHref = amount.href %}
 				<li class='donation one-off-donation'>
 					{# @FIXME [Nunjucks bug] Calling a macro (using call()/caller()) won't pass variables defined in this scope, inside the call() block. #}
-					<a class='external-link' href='{{ ammountHref if ammountHref else href }}' target='{{ "_blank" if openInNewWindow else "_self" }}' rel='noopener noreferrer'>
-						{{ buildAmmount(ammount) }}
+					<a class='external-link' href='{{ amountHref if amountHref else href }}' target='{{ "_blank" if openInNewWindow else "_self" }}' rel='noopener noreferrer'>
+						{{ buildAmount(amount) }}
 						<span class='title'>{{ title }}</span>
 					</a>
 				</li>
@@ -22,11 +22,11 @@
 				<li class='donation recurrent-donation'>
 					<span class='title'>{{ title }}</span>
 					<ul class='quantities'>
-						{%- for ammount in ammounts -%}
-							{%- set ammountHref = ammount.href -%}
+						{%- for amount in amounts -%}
+							{%- set amountHref = amount.href -%}
 							<li class='quantity'>
-								<a class='external-link' href='{{ ammountHref if ammountHref else href }}' target='{{ "_blank" if openInNewWindow else "_self" }}' rel='noopener noreferrer'>
-									{{ buildAmmount(ammount) }}
+								<a class='external-link' href='{{ amountHref if amountHref else href }}' target='{{ "_blank" if openInNewWindow else "_self" }}' rel='noopener noreferrer'>
+									{{ buildAmount(amount) }}
 								</a>
 							</li>
 						{%- endfor -%}

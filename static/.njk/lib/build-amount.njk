@@ -1,0 +1,16 @@
+{% macro buildAmount (amount) %}
+	{% set currency = amount.currency %}
+	{% set currencySymbol = currency.symbol %}
+	{% set amountValue = amount.value %}
+	{% set currencyName = currency.name | capitalize %}
+	{% set currencyAbbreviation = currency.abbr | upper %}
+	{% set billed = (amount.billed | lower) if amount.billed %}
+	<div class='amount{{ (" billed-" + billed) if billed }}' title='{{ currencySymbol }}{{ amountValue }} {{ currencyName }}{{ (" billed " + billed) if billed }}'>
+		<span class='currency-symbol'>{{ currencySymbol }}</span><span class='value'>{{ amountValue }}</span>
+		{%- if billed %}
+			/<abbr title='{{ billed | title }}' class='billed-abbr'>{{ billed | first | upper }}</abbr>
+		{% else %}
+			<abbr class='currency-abbr' title='{{ currencyName | title }}'>{{ currencyAbbreviation }}</abbr>
+		{% endif %}
+	</div>
+{% endmacro %}
