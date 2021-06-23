@@ -14,7 +14,7 @@
 				<li class='donation one-off-donation'>
 					{# @FIXME [Nunjucks bug] Calling a macro (using call()/caller()) won't pass variables defined in this scope, inside the call() block. #}
 					<a class='external-link' href='{{ amountHref if amountHref else href }}' target='{{ "_blank" if openInNewWindow else "_self" }}' rel='noopener noreferrer'>
-						{{ buildAmount(amount) }}
+						{{- buildAmount(amount) | trim -}}
 						<span class='title'>{{ title }}</span>
 					</a>
 				</li>
