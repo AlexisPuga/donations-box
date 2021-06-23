@@ -8,7 +8,7 @@
 		<span class='currency-symbol'>{{ currencySymbol }}</span><span class='value'>{{ amountValue }}</span>
 		{% if currency.abbr %}
 			{% set currencyAbbreviation = currency.abbr | upper %}
-			<abbr class='currency-abbr' title='{{ currencyName | title }}'>{{ currencyAbbreviation }}</abbr>
+			<sup class='currency-name'><abbr class='currency-abbr' title='{{ currencyName | title }}'>{{ currencyAbbreviation }}</abbr></sup>
 		{% endif %}
 		{% if billed %}
 			/<abbr title='{{ billed | title }}' class='billed-abbr'>{{ billed | first | upper }}</abbr>
