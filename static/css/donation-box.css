@@ -25,8 +25,11 @@
 	margin: -1px;
 }
 
-/* Show amount(s) and title inline. */
-.d10x-c .donation * {
+/* Show amount(s), quantities, and title inline. */
+.d10x-c .donation .amount,
+.d10x-c .donation .title,
+.d10x-c .donation .quantities,
+.d10x-c .donation .quantity {
 	display: inline-block;
 	vertical-align: middle;
 }
