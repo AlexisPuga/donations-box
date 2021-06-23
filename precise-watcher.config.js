@@ -13,5 +13,16 @@ module.exports = {
 			'cmd': 'nunjucks-to-html',
 			'args': ['*.njk', '--baseDir', 'static']
 		}]
+	}, {
+		'pattern': ['static/css/*.css'],
+		'on': ['ready', 'change'],
+		'run': [{
+			'cmd': 'cleancss',
+			'args': [
+				'static/css/donation-box.css',
+				'-c', 'ie9',
+				'-o', 'public/css/donation-box.min.css'
+			]
+		}]
 	}]
 };
