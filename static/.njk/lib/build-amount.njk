@@ -3,11 +3,13 @@
 	{% set currencySymbol = currency.symbol %}
 	{% set amountValue = amount.value %}
 	{% set currencyName = currency.name | capitalize %}
-	{% set currencyAbbreviation = currency.abbr | upper %}
 	{% set billed = (amount.billed | lower) if amount.billed %}
 	<div class='amount{{ (" billed-" + billed) if billed }}' title='{{ currencySymbol }}{{ amountValue }} {{ currencyName }}{{ (" billed " + billed) if billed }}'>
 		<span class='currency-symbol'>{{ currencySymbol }}</span><span class='value'>{{ amountValue }}</span>
-		<abbr class='currency-abbr' title='{{ currencyName | title }}'>{{ currencyAbbreviation }}</abbr>
+		{% if currency.abbr %}
+			{% set currencyAbbreviation = currency.abbr | upper %}
+			<abbr class='currency-abbr' title='{{ currencyName | title }}'>{{ currencyAbbreviation }}</abbr>
+		{% endif %}
 		{% if billed %}
 			/<abbr title='{{ billed | title }}' class='billed-abbr'>{{ billed | first | upper }}</abbr>
 		{% endif %}

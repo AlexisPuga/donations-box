@@ -1,6 +1,7 @@
 var dollars = {
 	'symbol': '$',
 	'name': 'Dollars',
+	/* optional */
 	'abbr': 'USD'
 };
 
