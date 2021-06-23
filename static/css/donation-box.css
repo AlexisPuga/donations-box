@@ -8,6 +8,11 @@
 	box-sizing: border-box;
 }
 
+.d10x-c {
+	/* Use minimum width */
+	display: table;
+}
+
 .d10x-c .donations {
 	list-style: none;
 }
