@@ -7,6 +7,11 @@
 	border: 1px solid #eee;
 }
 
+.d10x-c .recurrent-donation {
+	/* Equal link padding. */
+	padding-left: 1em;
+}
+
 /* Show ammount(s) and title inline. */
 .d10x-c .donation * {
 	display: inline-block;
