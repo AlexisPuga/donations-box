@@ -29,6 +29,6 @@
 }
 
 /* Make clickable things bigger. */
-.d10x-c .donation a {
+.d10x-c .donation .ammount {
 	padding: 1em;
 }
