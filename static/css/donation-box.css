@@ -28,3 +28,8 @@
 .d10x-c .donation .amount {
 	padding: 1em;
 }
+
+/* Make clickable area bigger. */
+.d10x-c .donation a {
+	display: block;
+}
