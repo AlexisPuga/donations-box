@@ -38,8 +38,14 @@
 
 .d10x-c .header,
 .d10x-c .donation .title,
-.d10x-c .donation .amount {
+/* 2 lines in .amount are ok with this padding */
+.d10x-c .one-off-donation .amount {
 	padding: 1em;
+}
+
+/* +2 lines in .amount reduce padding to squish text */
+.d10x-c .recurrent-donation .amount {
+	padding: .5em 1em;
 }
 
 /* Use a light gray background with a black font. */
@@ -67,4 +73,9 @@
 
 .d10x-c .donation .currency {
 	font-size: .6em;
+}
+
+/* Use a small font because we're using complete text. */
+.d10x-c .recurrent-donation .periodicity {
+	font-size: .8em;
 }
