@@ -4,6 +4,7 @@
 <aside id='donation-box' data-theme='compact' class='d10x-c'>
 	<header class='header'>
 		<div class='icon-wrapper'>
+			{% set icon = beneficiary.icon %}
 			{% set iconHref = icon.href or beneficiary.href %}
 			<a href='{{ iconHref }}' class='external-link' target='_blank' rel='noopener noreferrer'>
 				{% if icon.html %}
