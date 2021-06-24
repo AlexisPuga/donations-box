@@ -46,6 +46,13 @@
 .d10x-c .donation .amount {
 	background: #fafafa;
 	color: black;
+	/* Center each block */
+	text-align: center;
+}
+
+/* Show each element in .amount as a block */
+.d10x-c .amount .currency-name {
+	display: block;
 }
 
 .d10x-c .donation .title {
