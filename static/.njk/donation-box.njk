@@ -16,9 +16,11 @@
 				{% endif %}
 			</a>
 		</div>
-		{# @TODO Open in a new window only if the beneficiary wants to. #}
-		<p class='beneficiary'><a href='{{ beneficiary.href }}' rel='noopener noreferrer' target='_self' class='alias'>{{ beneficiary.alias }}</a></p>
-		<h1>Donations</h1>
+		<div class='hgroup'>
+			{# @TODO Open in a new window only if the beneficiary wants to. #}
+			<p class='beneficiary subheading'><a href='{{ beneficiary.href }}' rel='noopener noreferrer' target='_self' class='alias'>{{ beneficiary.alias }}</a></p>
+			<h1 class='heading'>Donations</h1>
+		</div>
 	</header>
 	<ol class='donations'>
 		{% for donation in donations %}
