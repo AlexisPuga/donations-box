@@ -36,7 +36,6 @@
 	vertical-align: middle;
 }
 
-.d10x-c .header,
 .d10x-c .donation .title,
 /* 2 lines in .amount are ok with this padding */
 .d10x-c .one-off-donation .amount {
@@ -78,4 +77,19 @@
 /* Use a small font because we're using complete text. */
 .d10x-c .recurrent-donation .periodicity {
 	font-size: .8em;
+}
+
+.d10x-c .header .icon-wrapper {
+	width: 48px;
+	overflow: hidden;
+	/* Don't trim image */
+	box-sizing: initial;
+	padding: 1em;
+}
+
+/* Show the icon to the side of the .hgroup */
+.d10x-c .header .icon-wrapper,
+.d10x-c .header .hgroup {
+	display: table-cell;
+	vertical-align: middle;
 }
