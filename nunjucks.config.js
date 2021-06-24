@@ -9,7 +9,12 @@ module.exports = {
 		'context': {
 			'beneficiary': {
 				'alias': 'Donation Box',
-				'href': '/beneficiary.html'
+				'href': '/beneficiary.html',
+				'icon': {
+					'src': '/img/favicon.svg',
+					'alt': 'Donation Box icon',
+					'href': '/beneficiary.html?icon'
+				}
 			},
 			'size': 'small',
 			// This donations are examples.
