@@ -3,7 +3,8 @@
 <link rel='stylesheet' href='/css/donation-box.min.css'/>
 <aside id='donation-box' data-theme='compact' class='d10x-c'>
 	<header class='header'>
-		<p class='beneficiary'><span class='alias'>{{ beneficiary.alias }}</span></p>
+		{# @TODO Open in a new window only if the beneficiary wants to. #}
+		<p class='beneficiary'><a href='{{ beneficiary.href }}' rel='noopener noreferrer' target='_self' class='alias'>{{ beneficiary.alias }}</a></p>
 		<h1>Donations</h1>
 	</header>
 	<ol class='donations'>
