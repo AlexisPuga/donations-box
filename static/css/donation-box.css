@@ -9,6 +9,7 @@
 }
 
 .d10x-c {
+	font-family: helvetica, arial, sans-serif;
 	/* Use minimum width */
 	display: table;
 }
