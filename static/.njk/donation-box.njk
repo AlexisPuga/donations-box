@@ -1,7 +1,9 @@
 {% from './lib/build-amount.njk' import buildAmount %}
 <link rel='stylesheet' href='/css/donation-box.min.css'/>
 <aside id='donation-box' data-theme='compact' class='d10x-c'>
-	<h1>Donations</h1>
+	<header class='header'>
+		<h1>Donations</h1>
+	</header>
 	<ol class='donations'>
 		{% for donation in donations %}
 			{% set type = donation.type %}
