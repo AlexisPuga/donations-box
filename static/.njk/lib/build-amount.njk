@@ -9,7 +9,7 @@
 		<span class='currency-symbol'>{{ currencySymbol }}</span><span class='value'>{{ amountValue }}</span>
 		<sup class='currency'><abbr class='currency-abbr' title='{{ currencyName | title }}'>{{ currencyAbbreviation }}</abbr></sup>
 		{% if periodicity %}
-			<span class='periodicity'>/<abbr title='{{ periodicity | title }}' class='periodicity-abbr'>{{ periodicity | first | upper }}</abbr></span>
+			<span class='periodicity'>{{ periodicity | title }}</span>
 		{% endif %}
 	</div>
 {% endmacro %}
