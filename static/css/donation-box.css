@@ -79,7 +79,7 @@
 	font-size: .8em;
 }
 
-.d10x-c .header .icon-wrapper {
+.d10x-c .header .beneficiary-icon-wrapper {
 	width: 48px;
 	overflow: hidden;
 	/* Don't trim image */
@@ -88,7 +88,7 @@
 }
 
 /* Show the icon to the side of the .hgroup */
-.d10x-c .header .icon-wrapper,
+.d10x-c .header .beneficiary-icon-wrapper,
 .d10x-c .header .hgroup {
 	display: table-cell;
 	vertical-align: middle;
