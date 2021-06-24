@@ -1,4 +1,5 @@
 {% from './lib/build-amount.njk' import buildAmount %}
+{% set small = size == 'small' %}
 <link rel='stylesheet' href='/css/donation-box.min.css'/>
 <aside id='donation-box' data-theme='compact' class='d10x-c'>
 	<header class='header'>
@@ -23,6 +24,9 @@
 			{% elseif type == 'recurrent' %}
 				<li class='donation recurrent-donation'>
 					<span class='title'>{{ title }}</span>
+					{% if small %}
+					<br>
+					{% endif %}
 					<ul class='quantities'>
 						{%- for amount in amounts -%}
 							{%- set amountHref = amount.href -%}
