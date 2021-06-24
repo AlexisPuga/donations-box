@@ -7,6 +7,9 @@ var dollars = {
 module.exports = {
 	'render': {
 		'context': {
+			'beneficiary': {
+				'alias': 'Donation Box'
+			},
 			'size': 'small',
 			// This donations are examples.
 			// You can modify them any way you want.
