@@ -8,7 +8,8 @@ module.exports = {
 	'render': {
 		'context': {
 			'beneficiary': {
-				'alias': 'Donation Box'
+				'alias': 'Donation Box',
+				'href': '/beneficiary.html'
 			},
 			'size': 'small',
 			// This donations are examples.
