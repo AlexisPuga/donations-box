@@ -3,13 +3,11 @@
 	{% set currencySymbol = currency.symbol %}
 	{% set amountValue = amount.value %}
 	{% set currencyName = currency.name | capitalize %}
+	{% set currencyAbbreviation = currency.abbr | upper %}
 	{% set periodicity = (amount.periodicity | lower) if amount.periodicity %}
 	<div class='amount{{ (" billed-" + periodicity) if periodicity }}' title='{{ currencySymbol }}{{ amountValue }} {{ currencyName }}{{ (" billed " + periodicity) if periodicity }}'>
 		<span class='currency-symbol'>{{ currencySymbol }}</span><span class='value'>{{ amountValue }}</span>
-		{% if currency.abbr %}
-			{% set currencyAbbreviation = currency.abbr | upper %}
-			<sup class='currency optional'><abbr class='currency-abbr' title='{{ currencyName | title }}'>{{ currencyAbbreviation }}</abbr></sup>
-		{% endif %}
+		<sup class='currency'><abbr class='currency-abbr' title='{{ currencyName | title }}'>{{ currencyAbbreviation }}</abbr></sup>
 		{% if periodicity %}
 			<span class='periodicity'>/<abbr title='{{ periodicity | title }}' class='periodicity-abbr'>{{ periodicity | first | upper }}</abbr></span>
 		{% endif %}
