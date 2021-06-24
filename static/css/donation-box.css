@@ -48,6 +48,11 @@
 	color: black;
 }
 
+.d10x-c .donation .title {
+	/* Show all text black (even links). */
+	color: black;
+}
+
 /* Make clickable area bigger. */
 .d10x-c .donation a {
 	display: block;
