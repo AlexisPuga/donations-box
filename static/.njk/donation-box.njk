@@ -3,6 +3,19 @@
 <link rel='stylesheet' href='/css/donation-box.min.css'/>
 <aside id='donation-box' data-theme='compact' class='d10x-c'>
 	<header class='header'>
+		<div class='icon-wrapper'>
+			{% set iconHref = icon.href or beneficiary.href %}
+			<a href='{{ iconHref }}' class='external-link' target='_blank' rel='noopener noreferrer'>
+				{% if icon.html %}
+					{{ icon.html | safe }}
+				{% else %}
+					{% set isDefault = true if not icon.src %}
+					{% set iconSource = icon.src or '/favicon.ico' %}
+					{% set iconDescription = icon.alt if not isDefault else 'Donation Box icon' %}
+					<img src='{{ iconSource }}' alt='{{ iconDescription }}'/>
+				{% endif %}
+			</a>
+		</div>
 		{# @TODO Open in a new window only if the beneficiary wants to. #}
 		<p class='beneficiary'><a href='{{ beneficiary.href }}' rel='noopener noreferrer' target='_self' class='alias'>{{ beneficiary.alias }}</a></p>
 		<h1>Donations</h1>
