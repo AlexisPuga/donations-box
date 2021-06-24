@@ -13,7 +13,7 @@
 					{% set isDefault = true if not icon.src %}
 					{% set iconSource = icon.src or '/favicon.ico' %}
 					{% set iconDescription = icon.alt if not isDefault else 'Donation Box icon' %}
-					<img src='{{ iconSource }}' alt='{{ iconDescription }}'/>
+					<img src='{{ iconSource }}' alt='{{ iconDescription }}' width='48' height='48'/>
 				{% endif %}
 			</a>
 		</div>
