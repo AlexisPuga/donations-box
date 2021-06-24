@@ -11,7 +11,7 @@
 			<sup class='currency-name optional'><abbr class='currency-abbr' title='{{ currencyName | title }}'>{{ currencyAbbreviation }}</abbr></sup>
 		{% endif %}
 		{% if periodicity %}
-			/<abbr title='{{ periodicity | title }}' class='periodicity-abbr'>{{ periodicity | first | upper }}</abbr>
+			<span class='periodicity'>/<abbr title='{{ periodicity | title }}' class='periodicity-abbr'>{{ periodicity | first | upper }}</abbr></span>
 		{% endif %}
 	</div>
 {% endmacro %}
