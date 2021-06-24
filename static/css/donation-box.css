@@ -42,6 +42,12 @@
 	padding: 1em;
 }
 
+/* Use a light gray background with a black font. */
+.d10x-c .donation .amount {
+	background: #fafafa;
+	color: black;
+}
+
 /* Make clickable area bigger. */
 .d10x-c .donation a {
 	display: block;
