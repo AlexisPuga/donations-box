@@ -19,6 +19,7 @@
 }
 
 /** Add gray border to items and amounts. */
+.d10x-c .header,
 .d10x-c .donation,
 .d10x-c .donation .amount {
 	border: 1px solid #eee;
@@ -35,6 +36,7 @@
 	vertical-align: middle;
 }
 
+.d10x-c .header,
 .d10x-c .donation .title,
 .d10x-c .donation .amount {
 	padding: 1em;
