@@ -123,6 +123,14 @@
 	vertical-align: middle;
 }
 
+/*
+ * Use a light gray background
+ * because it contains a bold font.
+ */
+.d10x-c .recurrent-donation {
+	background: #fafafa;
+}
+
 /* Show link color on select. */
 .d10x-c .donation:not(:hover):not(:focus) a {
 	color: inherit;
