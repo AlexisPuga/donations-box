@@ -59,6 +59,11 @@
 	width: 100%;
 }
 
+/* Remove underline decoration on .donation text */
+.d10x-c .donation a {
+	text-decoration: none;
+}
+
 /* +2 lines in .amount reduce padding to squish text */
 .d10x-c .recurrent-donation .amount {
 	padding: .5em 1em;
