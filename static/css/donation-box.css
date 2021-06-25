@@ -75,8 +75,6 @@
 }
 
 .d10x-c .donation .amount {
-	/* Change link's color */
-	color: black;
 	/* Center each block */
 	text-align: center;
 }
@@ -93,7 +91,7 @@
 
 .d10x-c .donation .title {
 	/* Show all text black (even links). */
-	color: black;
+
 }
 
 /* Make clickable area bigger. */
@@ -123,4 +121,25 @@
 .d10x-c .header .hgroup {
 	display: table-cell;
 	vertical-align: middle;
+}
+
+/* Show link color on select. */
+.d10x-c .donation:not(:hover):not(:focus) a {
+	color: inherit;
+}
+
+/*
+ * If the container is a link, turn all non
+ * selected elements black (and left the
+ * selected element with the link's color).
+ */
+.d10x-c .recurrent-donation .amount:not(:hover):not(:focus) {
+	color: black;
+}
+
+/* Use a bold font on the selected title. */
+.d10x-c .recurrent-donation .title,
+.d10x-c .donation:hover .title,
+.d10x-c .donation:focus .title {
+	font-weight: bold;
 }
