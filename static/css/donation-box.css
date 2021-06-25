@@ -30,6 +30,12 @@
 	margin: -1px;
 }
 
+.d10x-c .one-off-donation,
+.d10x-c .recurrent-donation {
+	/* Add padding on the sides */
+	padding: 0 1em;
+}
+
 /*
  * Show amount(s) and title(s) as table-cells
  * to allow moving amount(s) all the way to the right.
@@ -65,7 +71,7 @@
 
 /* +2 lines in .amount reduce padding to squish text */
 .d10x-c .recurrent-donation .amount {
-	padding: .5em 1em;
+	padding: 0 1em 1em 1em;
 }
 
 .d10x-c .donation .amount {
@@ -73,9 +79,6 @@
 	color: black;
 	/* Center each block */
 	text-align: center;
-	/* Same width as the beneficiary's icon */
-	min-width: 40px;
-	box-sizing: initial;
 }
 
 /* Make heading proporcional */
