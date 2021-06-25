@@ -12,6 +12,7 @@
 	font-family: helvetica, arial, sans-serif;
 	/* Use minimum width */
 	display: table;
+	background: white;
 }
 
 .d10x-c .donations {
