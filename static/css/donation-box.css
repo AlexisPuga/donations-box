@@ -13,6 +13,9 @@
 	/* Use minimum width */
 	display: table;
 	background: white;
+	/* Decorational */
+	border: 10px solid #eee;
+	border-radius: 10px;
 }
 
 .d10x-c .donations {
