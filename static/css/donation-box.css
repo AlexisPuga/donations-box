@@ -54,7 +54,7 @@
 	/* Center each block */
 	text-align: center;
 	/* Same width as the beneficiary's icon */
-	min-width: 48px;
+	min-width: 40px;
 	box-sizing: initial;
 }
 
@@ -83,7 +83,7 @@
 }
 
 .d10x-c .header .beneficiary-icon-wrapper {
-	width: 48px;
+	width: 40px;
 	overflow: hidden;
 	/* Don't trim image */
 	box-sizing: initial;
