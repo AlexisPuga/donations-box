@@ -31,9 +31,17 @@
 	margin: -1px;
 }
 
-/* Show amount(s), quantities, and title inline. */
+/*
+ * Show amount(s) and title(s) as table-cells
+ * to allow moving amount(s) all the way to the right.
+ */
 .d10x-c .donation .amount,
-.d10x-c .donation .title,
+.d10x-c .donation .title {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+/* Show quantities inline. */
 .d10x-c .donation .quantities,
 .d10x-c .donation .quantity {
 	display: inline-block;
@@ -44,6 +52,11 @@
 /* 2 lines in .amount are ok with this padding */
 .d10x-c .one-off-donation .amount {
 	padding: 1em;
+}
+
+/* Move amount all the way to the right. */
+.d10x-c .donation .title {
+	width: 100%;
 }
 
 /* +2 lines in .amount reduce padding to squish text */
