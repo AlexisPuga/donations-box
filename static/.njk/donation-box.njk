@@ -42,9 +42,6 @@
 			{% elseif type == 'recurrent' %}
 				<li class='donation recurrent-donation'>
 					<span class='title'>{{ title }}</span>
-					{% if small %}
-					<br>
-					{% endif %}
 					<ul class='quantities'>
 						{%- for amount in amounts -%}
 							{%- set amountHref = amount.href -%}
