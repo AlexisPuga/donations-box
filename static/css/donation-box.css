@@ -69,9 +69,8 @@
 	padding: .5em 1em;
 }
 
-/* Use a light gray background with a black font. */
 .d10x-c .donation .amount {
-	background: #fafafa;
+	/* Change link's color */
 	color: black;
 	/* Center each block */
 	text-align: center;
