@@ -53,6 +53,9 @@
 	color: black;
 	/* Center each block */
 	text-align: center;
+	/* Same width as the beneficiary's icon */
+	min-width: 48px;
+	box-sizing: initial;
 }
 
 /* Show each element in .amount as a block */
