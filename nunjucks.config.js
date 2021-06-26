@@ -11,7 +11,7 @@ module.exports = {
 				'alias': 'Donation Box',
 				'href': '/beneficiary.html',
 				'icon': {
-					'src': '/img/favicon.svg',
+					'src': '/favicon.svg',
 					'alt': 'Donation Box icon',
 					'href': '/beneficiary.html?icon'
 				}
