@@ -24,5 +24,15 @@ module.exports = {
 				'-o', 'public/css/donation-box.min.css'
 			]
 		}]
+	}, {
+		'pattern': ['static/**/*.{png,ico,jpg,jpeg,svg}'],
+		'on': ['ready', 'change'],
+		'run': [{
+			'cmd': 'cpy',
+			'args': [
+				'<file>',
+				'public'
+			]
+		}]
 	}]
 };
