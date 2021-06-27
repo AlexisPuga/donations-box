@@ -1,5 +1,6 @@
 {% from './lib/build-amount.njk' import buildAmount %}
 {% set small = size == 'small' %}
+{% set beneficiaryAlias = beneficiary.alias %}
 <link rel='stylesheet' href='/css/donation-box.min.css'/>
 <aside id='donation-box' data-theme='compact' class='d10x-c'>
 	<header class='header'>
@@ -11,16 +12,16 @@
 					{{ icon.html | safe }}
 				{% else %}
 					{% set isDefault = true if not icon.src %}
-					{% set iconSource = icon.src or '/favicon.ico' %}
+					{% set iconSource = icon.src %}
 					{% set iconSourceRetina = icon.retinaSrc or iconSource %}
-					{% set iconDescription = icon.alt if not isDefault else 'Donation Box icon' %}
+					{% set iconDescription = icon.alt if not isDefault else beneficiaryAlias + ' icon' %}
 					<img class='beneficiary-icon icon' src='{{ iconSource }}' alt='{{ iconDescription }}' width='40' height='40' srcset='{{ iconSourceRetina }} 2x'/>
 				{% endif %}
 			</a>
 		</div>
 		<div class='hgroup'>
 			{# @TODO Open in a new window only if the beneficiary wants to. #}
-			<p class='beneficiary subheading'><a href='{{ beneficiary.href }}' rel='noopener noreferrer' target='_self' class='alias'>{{ beneficiary.alias }}</a></p>
+			<p class='beneficiary subheading'><a href='{{ beneficiary.href }}' rel='noopener noreferrer' target='_self' class='alias'>{{ beneficiaryAlias }}</a></p>
 			<h1 class='heading'>Donations</h1>
 		</div>
 	</header>
