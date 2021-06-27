@@ -12,8 +12,9 @@
 				{% else %}
 					{% set isDefault = true if not icon.src %}
 					{% set iconSource = icon.src or '/favicon.ico' %}
+					{% set iconSourceRetina = icon.retinaSrc or iconSource %}
 					{% set iconDescription = icon.alt if not isDefault else 'Donation Box icon' %}
-					<img class='beneficiary-icon icon' src='{{ iconSource }}' alt='{{ iconDescription }}' width='40' height='40'/>
+					<img class='beneficiary-icon icon' src='{{ iconSource }}' alt='{{ iconDescription }}' width='40' height='40' srcset='{{ iconSourceRetina }} 2x'/>
 				{% endif %}
 			</a>
 		</div>
