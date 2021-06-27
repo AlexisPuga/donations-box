@@ -78,11 +78,12 @@
 			{% set href = donation.href %}
 			{% set title = donation.title %}
 			{% set amounts = donation.amounts %}
+			{% set paymentProvider = donation.via %}
 			{% if type == 'one-off' %}
 				{% set amount = amounts | first %}
 				{% set amountHref = amount.href %}
 				{% set qr = amount.qr or donation.qr %}
-				<li class='donation one-off-donation'>
+				<li class='donation one-off-donation' data-payment-provider='{{ paymentProvider }}'>
 					{# @FIXME [Nunjucks bug] Calling a macro (using call()/caller()) won't pass variables defined in this scope, inside the call() block. #}
 					<a class='external-link' href='{{ amountHref if amountHref else href }}' target='{{ "_blank" if openInNewWindow else "_self" }}' rel='noopener noreferrer'>
 						<span class='title'>{{ title }}</span>
@@ -122,7 +123,7 @@
 					</a>
 				</li>
 			{% elseif type == 'recurrent' %}
-				<li class='donation recurrent-donation'>
+				<li class='donation recurrent-donation' data-payment-provider='{{ paymentProvider }}'>
 					<span class='title'>{{ title }}</span>
 					<ul class='quantities'>
 						{%- for amount in amounts -%}
