@@ -44,6 +44,8 @@
 .d10x-c .donation .title {
 	display: table-cell;
 	vertical-align: middle;
+	/* Keep empty/incomplete elements the same height. */
+	height: 66px;
 }
 
 /* Show quantities inline. */
