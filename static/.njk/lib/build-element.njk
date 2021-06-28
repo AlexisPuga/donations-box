@@ -1,0 +1,7 @@
+{% macro buildElement (tag, attributes) %}
+	{% set attributesString = '' %}
+	{% for key, value in attributes %}
+		{% set attributesString = attributesString + ' ' + key + '="' + value + '"' %}
+	{% endfor %}
+	{{ ('<' + tag + ' ' + attributesString + '/>') | safe }}
+{% endmacro %}
