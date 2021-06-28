@@ -42,15 +42,28 @@
 						<span class='title'>{{ title }}</span>
 						{{- buildAmount(amount) | trim -}}
 						{% if qr %}
-							<div class='qr-code-wrapper'>
-								{{ buildElement('img', {
-									'class': 'qr-code',
-									'src': qr.src,
-									'alt': qr.alt,
-									'srcset': qr.srcset,
-									'width': 120,
-									'height': 120
-								}) }}
+							{% set animateQR = qr.animate %}
+							<div class='qr-code-preview-wrapper{{ " animated" if animateQR }}'>
+								{% if animateQR %}
+									{{ buildElement('img', {
+										'class': 'qr-code-preview',
+										'src': qr.src,
+										'alt': 'QR Code preview',
+										'srcset': qr.srcset,
+										'width': 20,
+										'height': 20
+									}) }}
+								{% endif %}
+								<div class='qr-code-wrapper'>
+									{{ buildElement('img', {
+										'class': 'qr-code',
+										'src': qr.src,
+										'alt': qr.alt,
+										'srcset': qr.srcset,
+										'width': 120,
+										'height': 120
+									}) }}
+								</div>
 							</div>
 						{% endif %}
 					</a>
