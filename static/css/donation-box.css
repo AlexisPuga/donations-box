@@ -131,6 +131,19 @@
 	background: #fafafa;
 }
 
+.d10x-c .qr-code-wrapper {
+	padding: 2em;
+	/* Add the same top margin in the bottom */
+	margin-bottom: 1em;
+}
+
+.d10x-c .qr-code {
+	/* Remove extra height and allow centering the image */
+	display: table;
+	/* Center the image */
+	margin: auto;
+}
+
 /* Show link color on select. */
 .d10x-c .donation:not(:hover):not(:focus) a {
 	color: inherit;
