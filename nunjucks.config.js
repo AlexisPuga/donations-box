@@ -67,6 +67,21 @@ module.exports = {
 					'periodicity': 'Yearly',
 					'currency': dollars
 				}]
+			}, {
+				'type': 'one-off',
+				'title': 'Donate via Monero',
+				'amounts': [{
+					'href': 'monero:8Bqeu7beB2ocwTr1Gn4gz6VUUoqVDokiR9WAY2E8m5toNSbRvRMrWjgWYnaNGchWc2cVRgVvidNpLjZF5vXJnauf7s2oHPw',
+					'qr': {
+						'src': '/img/monero-qr.png',
+						'alt': 'Donation Box\'s Monero QR Code',
+						'srcset': '/img/monero-qr.png 2x'
+					},
+					'currency': {
+						'name': 'Monero',
+						'abbr': 'XMR'
+					}
+				}]
 			}]
 		}
 	}
