@@ -27,11 +27,14 @@ module.exports = {
 	}, {
 		'pattern': ['static/**/*.{png,ico,jpg,jpeg,svg}'],
 		'on': ['ready', 'change'],
+		'baseDir': 'static',
 		'run': [{
 			'cmd': 'cpy',
 			'args': [
 				'<file>',
-				'public'
+				'../public',
+				'--cwd=static',
+				'--parents'
 			]
 		}]
 	}]
