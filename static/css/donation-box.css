@@ -167,6 +167,8 @@
 }
 
 /* Use a bold font on the selected title. */
-.d10x-c .recurrent-donation .title {
+.d10x-c .recurrent-donation .title,
+.d10x-c .donation:hover .title,
+.d10x-c .donation:focus .title {
 	font-weight: bold;
 }
