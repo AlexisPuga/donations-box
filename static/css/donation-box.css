@@ -134,7 +134,13 @@
 }
 
 .d10x-c .qr-code-wrapper {
-	padding: 2em;
+	/**
+	 * This padding may not seem horizontally centered, but it is.
+	 * The thing is that the qr code contains a white padding and that
+	 * makes the padding seem weird, but you can check it using a black
+	 * background.
+	 */
+	padding: 0 1em 1em 1em;
 	/* Add the same top margin in the bottom */
 	margin-bottom: 1em;
 }
