@@ -199,6 +199,11 @@
 	margin: auto;
 }
 
+.d10x-c .qr-code-preview {
+	/* Round the qr preview a little. */
+	border-radius: 100%;
+}
+
 /* Show link color on select. */
 .d10x-c .donation:not(:hover):not(:focus) a {
 	color: inherit;
