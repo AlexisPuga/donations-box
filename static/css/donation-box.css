@@ -168,15 +168,12 @@
 	 * in case :last-child/:first-child are not supported.
 	 */
 	bottom: 100%;
-	margin-bottom: 5px;
 }
 
 /* Show qr at the bottom of the .donation. */
 .d10x-c .donation:first-child .animated.qr-code-preview-wrapper .qr-code-wrapper {
 	top: 100%;
-	margin-top: 5px;
 	/* Remove fallback styles. */
-	margin-bottom: 0;
 	bottom: auto;
 }
 
@@ -187,8 +184,6 @@
 .d10x-c .animated.qr-code-preview-wrapper:not(:hover):not(:focus) .qr-code-wrapper {
 	opacity: 0;
 	visibility: hidden;
-	margin-top: 0;
-	margin-bottom: 0;
 }
 
 .d10x-c .qr-code-preview,
