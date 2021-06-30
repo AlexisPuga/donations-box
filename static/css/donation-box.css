@@ -17,6 +17,7 @@
 	border: 10px solid #eee;
 	border-radius: 10px;
 	font-size: 16px;
+	line-height: 1.6;
 }
 
 .d10x-c .donations {
@@ -60,7 +61,7 @@
 .d10x-c .donation .title,
 /* 2 lines in .amount are ok with this padding */
 .d10x-c .one-off-donation .amount {
-	padding: 1em;
+	padding: 0 1em;
 }
 
 /* Move amount all the way to the right. */
@@ -75,7 +76,7 @@
 
 /* +2 lines in .amount reduce padding to squish text */
 .d10x-c .recurrent-donation .amount {
-	padding: 0 1em 1em 1em;
+	padding: 0 1em;
 }
 
 .d10x-c .donation .amount {
@@ -140,6 +141,12 @@
 	position: relative;
 }
 
+.d10x-c .quantities,
+.d10x-c .qr-code-wrapper {
+	/* Add the same left/right space in the bottom */
+	margin-bottom: 1em;
+}
+
 .d10x-c .qr-code-wrapper {
 	/**
 	 * This padding may not seem horizontally centered, but it is.
@@ -147,9 +154,6 @@
 	 * makes the padding seem weird, but you can check it using a black
 	 * background.
 	 */
-	padding: 0 1em 1em 1em;
-	/* Add the same top margin in the bottom */
-	margin-bottom: 1em;
 	padding: 1em 2em 2em 2em;
 }
 
