@@ -41,6 +41,20 @@
 	padding: 1em;
 }
 
+/* Use a black border with a black bolder font. */
+.d10x-c .button {
+	border: 1px solid black;
+	color: black;
+	font-weight: bold;
+	text-decoration: unset;
+	font-size: .9em;
+	border-radius: 5px;
+	/* Make it larger */
+	padding: .25em 1.5em;
+	/* Allow moving it to the left/right. */
+	display: table;
+}
+
 .d10x-c .one-off-donation,
 .d10x-c .recurrent-donation {
 	/* Add padding on the sides */
