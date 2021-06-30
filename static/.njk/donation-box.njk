@@ -97,9 +97,11 @@
 			{% endif %}
 		{% endfor %}
 	</ol>
-	<footer class='footer'>
-		<small class='disclaimer'>
-			{{ disclaimer | safe }}
-		</small>
-	</footer>
+	{% if disclaimer %}
+		<footer class='footer'>
+			<small class='disclaimer'>
+				{{ disclaimer | safe }}
+			</small>
+		</footer>
+	{% endif %}
 </aside>
