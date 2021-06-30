@@ -187,6 +187,7 @@
 	visibility: hidden;
 }
 
+.d10x-c .beneficiary-icon,
 .d10x-c .qr-code-preview,
 .d10x-c .qr-code {
 	/* Remove extra height and allow centering the image */
