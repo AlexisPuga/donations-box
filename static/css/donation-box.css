@@ -211,6 +211,10 @@
 	padding: 2em;
 }
 
+.d10x-c .footer .disclaimer {
+	font-size: .8em;
+}
+
 /* Show link color on select. */
 .d10x-c .donation:not(:hover):not(:focus) a {
 	color: inherit;
