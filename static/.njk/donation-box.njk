@@ -32,35 +32,38 @@
 			<p class='headline'>
 				{{ headline | striptags(true) | escape | nl2br }}
 			</p>
-			<a href='#donations' class='internal-link show-donations-button button'>Donate</a>
-			<script>
-				'use strict';
+			{% if not open %}
+				<a href='#donations' class='internal-link show-donations-button button'>Donate</a>
+				<script>
+					/* @TODO Move to a file. */
+					'use strict';
 
-				(function (mainElement, statesAttributeName) {
+					(function (mainElement, statesAttributeName) {
 
-					var states = (function parseStatesFromAttribute (element, attributeName) {
+						var states = (function parseStatesFromAttribute (element, attributeName) {
 
-						var states = {};
-						var attributeValue = element.getAttribute(attributeName);
+							var states = {};
+							var attributeValue = element.getAttribute(attributeName);
 
-						try { states = JSON.parse(attributeValue); }
-						catch (exception) { console.error(exception); }
+							try { states = JSON.parse(attributeValue); }
+							catch (exception) { console.error(exception); }
 
-						return states;
+							return states;
 
-					})(mainElement, statesAttributeName);
-					var STATE_OPEN = states.open;
-					var showDonationsButton = mainElement.querySelector('.header .show-donations-button');
+						})(mainElement, statesAttributeName);
+						var STATE_OPEN = states.open;
+						var showDonationsButton = mainElement.querySelector('.header .show-donations-button');
 
-					showDonationsButton.addEventListener('click', function setOpenState (e) {
+						showDonationsButton.addEventListener('click', function setOpenState (e) {
 
-						this.removeEventListener('click', setOpenState, false);
-						mainElement.classList.add(STATE_OPEN);
+							this.removeEventListener('click', setOpenState, false);
+							mainElement.classList.add(STATE_OPEN);
 
-					}, false);
+						}, false);
 
-				})(document.getElementById('donation-box'), 'data-states');
-			</script>
+					})(document.getElementById('donation-box'), 'data-states');
+				</script>
+			{% endif %}
 		{% endif %}
 	</header>
 	<ol id='donations' class='donations'>
