@@ -25,9 +25,11 @@
 			<p class='beneficiary subheading'><a href='{{ beneficiary.href }}' rel='noopener noreferrer' target='_self' class='alias'>{{ beneficiaryAlias }}</a></p>
 			<h1 class='heading'>Donations</h1>
 		</div>
-		<p class='headline'>
-			{{ headline | striptags(true) | escape | nl2br }}
-		</p>
+		{% if headline %}
+			<p class='headline'>
+				{{ headline | striptags(true) | escape | nl2br }}
+			</p>
+		{% endif %}
 	</header>
 	<ol class='donations'>
 		{% for donation in donations %}
