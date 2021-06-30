@@ -207,6 +207,10 @@
 	border-radius: 100%;
 }
 
+.d10x-c .footer {
+	padding: 2em;
+}
+
 /* Show link color on select. */
 .d10x-c .donation:not(:hover):not(:focus) a {
 	color: inherit;
