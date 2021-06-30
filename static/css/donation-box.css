@@ -33,6 +33,10 @@
 	margin: -1px;
 }
 
+.d10x-c .header .headline {
+	padding: 1em 2em;
+}
+
 .d10x-c .one-off-donation,
 .d10x-c .recurrent-donation {
 	/* Add padding on the sides */
@@ -143,7 +147,8 @@
 }
 
 .d10x-c .quantities,
-.d10x-c .qr-code-wrapper {
+.d10x-c .qr-code-wrapper,
+.d10x-c .header .headline {
 	/* Add the same left/right space in the bottom */
 	margin-bottom: 1em;
 }
