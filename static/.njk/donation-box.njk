@@ -2,8 +2,11 @@
 {% from './lib/build-element.njk' import buildElement %}
 {% set small = size == 'small' %}
 {% set beneficiaryAlias = beneficiary.alias %}
+{% set states = {
+	'open': 'is-open'
+} %}
 <link rel='stylesheet' href='/css/donation-box.min.css'/>
-<aside id='donation-box' data-theme='compact' class='d10x-c'>
+<aside id='donation-box' data-theme='compact' class='d10x-c {{ states.open if open }}' data-states='{{ states | dump }}'>
 	<header class='header'>
 		<div class='beneficiary-icon-wrapper icon-wrapper'>
 			{% set icon = beneficiary.icon %}
@@ -29,9 +32,38 @@
 			<p class='headline'>
 				{{ headline | striptags(true) | escape | nl2br }}
 			</p>
+			<a href='#donations' class='internal-link show-donations-button button'>Donate</a>
+			<script>
+				'use strict';
+
+				(function (mainElement, statesAttributeName) {
+
+					var states = (function parseStatesFromAttribute (element, attributeName) {
+
+						var states = {};
+						var attributeValue = element.getAttribute(attributeName);
+
+						try { states = JSON.parse(attributeValue); }
+						catch (exception) { console.error(exception); }
+
+						return states;
+
+					})(mainElement, statesAttributeName);
+					var STATE_OPEN = states.open;
+					var showDonationsButton = mainElement.querySelector('.header .show-donations-button');
+
+					showDonationsButton.addEventListener('click', function setOpenState (e) {
+
+						this.removeEventListener('click', setOpenState, false);
+						mainElement.classList.add(STATE_OPEN);
+
+					}, false);
+
+				})(document.getElementById('donation-box'), 'data-states');
+			</script>
 		{% endif %}
 	</header>
-	<ol class='donations'>
+	<ol id='donations' class='donations'>
 		{% for donation in donations %}
 			{% set type = donation.type %}
 			{% set href = donation.href %}

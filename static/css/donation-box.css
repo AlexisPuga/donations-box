@@ -92,6 +92,11 @@
 	padding: 0 1em;
 }
 
+#donation-box:not(.is-open) .donations,
+#donation-box.is-open .show-donations-button {
+	display: none;
+}
+
 /* Move amount all the way to the right. */
 .d10x-c .donation .title {
 	width: 100%;
