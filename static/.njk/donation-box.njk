@@ -6,7 +6,8 @@
 	'open': 'is-open'
 } %}
 <link rel='stylesheet' href='/css/donation-box.min.css'/>
-<aside id='donation-box' data-theme='compact' class='d10x-c {{ states.open if open }}' data-states='{{ states | dump }}'>
+{# Always set states.open to show donations even if js is not being used. #}
+<aside id='donation-box' data-theme='compact' class='d10x-c {{ states.open }}' data-states='{{ states | dump }}'>
 	<header class='header'>
 		<div class='beneficiary-icon-wrapper icon-wrapper'>
 			{% set icon = beneficiary.icon %}
@@ -32,7 +33,7 @@
 			<p class='headline'>
 				{{ headline | striptags(true) | escape | nl2br }}
 			</p>
-			{% if not open %}
+			{% if not open or open === 'auto' %}
 				<a href='#donations' class='internal-link show-donations-button button'>Donate</a>
 				<script>
 					/* @TODO Move to a file. */
@@ -53,6 +54,9 @@
 						})(mainElement, statesAttributeName);
 						var STATE_OPEN = states.open;
 						var showDonationsButton = mainElement.querySelector('.header .show-donations-button');
+
+						// Remove the open state if it's using js.
+						mainElement.classList.remove(STATE_OPEN);
 
 						showDonationsButton.addEventListener('click', function setOpenState (e) {
 
