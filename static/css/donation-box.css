@@ -55,6 +55,11 @@
 	display: table;
 }
 
+.d10x-c .header .show-donations-button {
+	/* Move to the right */
+	margin-left: auto;
+}
+
 .d10x-c .one-off-donation,
 .d10x-c .recurrent-donation {
 	/* Add padding on the sides */
