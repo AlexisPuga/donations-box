@@ -149,6 +149,7 @@
 	padding: 0 1em 1em 1em;
 	/* Add the same top margin in the bottom */
 	margin-bottom: 1em;
+	padding: 1em 2em 2em 2em;
 }
 
 /* Show the large qr image as a popup */
