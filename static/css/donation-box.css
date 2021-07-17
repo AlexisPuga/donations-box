@@ -126,6 +126,7 @@
 /* Make heading proporcional */
 .d10x-c h1 {
 	font-size: 1.25em;
+	line-height: 1em;
 }
 
 /* Show each element in .amount as a block */
