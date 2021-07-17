@@ -3,11 +3,12 @@
 {% set small = size == 'small' %}
 {% set beneficiaryAlias = beneficiary.alias %}
 {% set states = {
-	'open': 'is-open'
+	'open': 'is-open',
+	'headline': 'has-headline'
 } %}
 <link rel='stylesheet' href='/css/donation-box.min.css'/>
 {# Always set states.open to show donations even if js is not being used. #}
-<aside id='donation-box' data-theme='compact' class='d10x-c {{ states.open }}' data-states='{{ states | dump }}'>
+<aside id='donation-box' data-theme='compact' class='d10x-c {{ states.open }} {{ states.headline if headline }}' data-states='{{ states | dump }}'>
 	<header class='header'>
 		<div class='beneficiary-icon-wrapper icon-wrapper'>
 			{% set icon = beneficiary.icon %}
