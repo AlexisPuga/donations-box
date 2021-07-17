@@ -273,3 +273,25 @@
 .d10x-c .recurrent-donation .title {
 	font-weight: bold;
 }
+
+/* Where screen is larger is larger than this view's width (including borders). */
+@media (min-width: 750px) {
+
+	.d10x-c {
+		/* Show 2 columns (360 x 2) + borders (2px) */
+		width: 740px;
+	}
+
+	.d10x-c > * {
+		/* Show them as columns */
+		display: inline-block;
+		vertical-align: top;
+		width: 360px;
+	}
+
+	.d10x-c .donations {
+		/** Move content to the right; footer to the left. */
+		float: right;
+	}
+
+}
