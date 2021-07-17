@@ -277,19 +277,19 @@
 /* Where screen is larger is larger than this view's width (including borders). */
 @media (min-width: 750px) {
 
-	.d10x-c {
+	.d10x-c.is-open {
 		/* Show 2 columns (360 x 2) + borders (2px) */
 		width: 740px;
 	}
 
-	.d10x-c > * {
+	.d10x-c.is-open > * {
 		/* Show them as columns */
 		display: inline-block;
 		vertical-align: top;
 		width: 360px;
 	}
 
-	.d10x-c .donations {
+	.d10x-c.is-open .donations {
 		/** Move content to the right; footer to the left. */
 		float: right;
 	}
