@@ -60,7 +60,7 @@
 	margin-left: auto;
 }
 
-.d10x-c .one-off-donation,
+.d10x-c .one-off-donation > a,
 .d10x-c .recurrent-donation {
 	/* Add padding on the sides */
 	padding: 0 1em;
