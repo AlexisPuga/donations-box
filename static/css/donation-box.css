@@ -99,9 +99,13 @@
 	padding: 0 1em;
 }
 
-#donation-box:not(.is-open) .donations,
-#donation-box.is-open .show-donations-button {
+#donation-box:not(.is-open) .donations {
 	display: none;
+}
+
+#donation-box.is-open .show-donations-button {
+	/* Using this instead of display: none preserves the container's height */
+	visibility: hidden;
 }
 
 /* Move amount all the way to the right. */
