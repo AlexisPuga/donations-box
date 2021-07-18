@@ -273,6 +273,10 @@
 	font-weight: bold;
 }
 
+.d10x-c ol {
+	list-style: none;
+}
+
 /* Where screen is larger is larger than this view's width (including borders). */
 @media (min-width: 740px) {
 
