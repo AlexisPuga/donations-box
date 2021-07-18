@@ -277,19 +277,19 @@
 /* Where screen is larger is larger than this view's width (including borders). */
 @media (min-width: 730px) {
 
-	.d10x-c.has-headline.has-disclaimer.is-open {
+	.d10x-c[data-max-columns='2'].has-headline.has-disclaimer.is-open {
 		/* Show 2 columns (340 x 2) + borders (10 x 2) */
 		width: 700px;
 	}
 
-	.d10x-c.has-headline.has-disclaimer.is-open > * {
+	.d10x-c[data-max-columns='2'].has-headline.has-disclaimer.is-open > * {
 		/* Show them as columns */
 		display: inline-block;
 		vertical-align: top;
 		width: 340px;
 	}
 
-	.d10x-c.has-headline.has-disclaimer.is-open .donations {
+	.d10x-c[data-max-columns='2'].has-headline.has-disclaimer.is-open .donations {
 		/** Move content to the right; footer to the left. */
 		float: right;
 	}
