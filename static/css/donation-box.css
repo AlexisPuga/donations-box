@@ -14,8 +14,7 @@
 	display: table;
 	background: white;
 	/* Decorational */
-	border: 10px solid #eee;
-	border-radius: 10px;
+	border: 1px solid #eee;
 	font-size: 16px;
 	line-height: 1.6;
 	width: 360px;
@@ -23,14 +22,11 @@
 
 .d10x-c .donations {
 	list-style: none;
-}
-
-/** Add gray border to items and amounts. */
-.d10x-c .header,
-.d10x-c .donation {
-	border: 1px solid #eee;
-	/* Overlap borders */
-	margin: -1px;
+	/* Prevent showing .d10x-c's border */
+	background: white;
+	display: inline-block;
+	/* Use box-shadow for 2 columns */
+	box-shadow: 0 0 5px rgba(0, 0, 0, .1);
 }
 
 .d10x-c .header {
@@ -84,6 +80,7 @@
 	display: table;
 	width: 100%;
 	table-layout: fixed;
+	padding-bottom: 1em;
 }
 
 /* Show each quantity the same width. */
@@ -181,8 +178,6 @@
 	position: relative;
 }
 
-.d10x-c .quantities,
-.d10x-c .qr-code-wrapper,
 .d10x-c .header .headline {
 	/* Add the same left/right space in the bottom */
 	margin-bottom: 1em;
@@ -195,7 +190,7 @@
 	 * makes the padding seem weird, but you can check it using a black
 	 * background.
 	 */
-	padding: 1em 2em 2em 2em;
+	padding: 1em 2em 3em 2em;
 }
 
 /* Show the large qr image as a popup */
@@ -275,21 +270,24 @@
 }
 
 /* Where screen is larger is larger than this view's width (including borders). */
-@media (min-width: 730px) {
+@media (min-width: 740px) {
 
 	.d10x-c[data-max-columns='2'].has-headline.has-disclaimer.is-open {
-		/* Show 2 columns (340 x 2) + borders (10 x 2) */
-		width: 700px;
+		margin: 0em;
+		/* Show 2 columns (360 x 2) + .donations's margin (-1em) */
+		width: calc(360px * 2 - 1em);
 	}
 
 	.d10x-c[data-max-columns='2'].has-headline.has-disclaimer.is-open > * {
 		/* Show them as columns */
 		display: inline-block;
 		vertical-align: top;
-		width: 340px;
+		width: 360px;
 	}
 
 	.d10x-c[data-max-columns='2'].has-headline.has-disclaimer.is-open .donations {
+		/* Draw outside the box */
+		margin: -1em;
 		/** Move content to the right; footer to the left. */
 		float: right;
 	}
