@@ -26,7 +26,7 @@
 	list-style: none;
 	/* Prevent showing .d10x-c's border */
 	background: white;
-	display: inline-block;
+	display: table;
 	/* Use borders on smallest view */
 	border: 1px solid #eee;
 	/* Overlap borders */
