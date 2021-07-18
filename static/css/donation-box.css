@@ -271,8 +271,21 @@
 	font-weight: bold;
 }
 
+/* Where screen is small but not the smallest */
+@media (min-width: 410px) {
+
+	.d10x-c .donations {
+		/* Draw outside the box */
+		margin: -1em -2em -1em 2em;
+		/* Use box-shadow instead of border */
+		box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+		border: 0;
+	}
+
+}
+
 /* Where screen is larger is larger than this view's width (including borders). */
-@media (min-width: 740px) {
+@media (min-width: 750px) {
 
 	.d10x-c[data-max-columns='2'].has-headline.has-disclaimer.is-open {
 		margin: 0em;
@@ -292,9 +305,6 @@
 		margin: -1em;
 		/** Move content to the right; footer to the left. */
 		float: right;
-		/* Use box-shadow instead of border */
-		box-shadow: 0 0 5px rgba(0, 0, 0, .1);
-		border: 0;
 	}
 
 }
