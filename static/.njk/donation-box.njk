@@ -72,73 +72,79 @@
 			{% endif %}
 		{% endif %}
 	</header>
-	<ol id='donations' class='donations'>
-		{% for donation in donations %}
-			{% set type = donation.type %}
-			{% set href = donation.href %}
-			{% set title = donation.title %}
-			{% set amounts = donation.amounts %}
-			{% set paymentProvider = donation.via %}
-			{% if type == 'one-off' %}
-				{% set amount = amounts | first %}
-				{% set amountHref = amount.href %}
-				{% set qr = amount.qr or donation.qr %}
-				<li class='donation one-off-donation' data-payment-provider='{{ paymentProvider }}'>
-					{# @FIXME [Nunjucks bug] Calling a macro (using call()/caller()) won't pass variables defined in this scope, inside the call() block. #}
-					<a class='external-link' href='{{ amountHref if amountHref else href }}' target='{{ "_blank" if openInNewWindow else "_self" }}' rel='noopener noreferrer'>
-						<span class='title'>{{ title }}</span>
-						{% if qr %}
-							{% set animateQR = qr.animate %}
-							{% if not animateQR %}
-								{{- buildAmount(amount) | trim -}}
-							{% endif %}
-							<div class='qr-code-preview-wrapper{{ " animated" if animateQR }}'>
-								{% if animateQR %}
-									{{ buildElement('img', {
-										'class': 'qr-code-preview',
-										'src': qr.src,
-										'alt': 'QR Code preview',
-										'srcset': qr.srcset,
-										'width': 20,
-										'height': 20
-									}) }}
+	<div id='donations' class='donations'>
+		{% for paymentProvider, paymentProviderDonations in donations %}
+			<div class='payment-provider-donations-wrapper' data-payment-provider='{{ paymentProvider }}'>
+				<p class='payment-provider'>{{ paymentProvider }}</p>
+				<ol class='payment-provider-donations'>
+				{% for donation in paymentProviderDonations %}
+					{% set type = donation.type %}
+					{% set href = donation.href %}
+					{% set title = donation.title %}
+					{% set amounts = donation.amounts %}
+					{% if type == 'one-off' %}
+						{% set amount = amounts | first %}
+						{% set amountHref = amount.href %}
+						{% set qr = amount.qr or donation.qr %}
+						<li class='donation one-off-donation'>
+							{# @FIXME [Nunjucks bug] Calling a macro (using call()/caller()) won't pass variables defined in this scope, inside the call() block. #}
+							<a class='external-link' href='{{ amountHref if amountHref else href }}' target='{{ "_blank" if openInNewWindow else "_self" }}' rel='noopener noreferrer'>
+								<span class='title'>{{ title }}</span>
+								{% if qr %}
+									{% set animateQR = qr.animate %}
+									{% if not animateQR %}
+										{{- buildAmount(amount) | trim -}}
+									{% endif %}
+									<div class='qr-code-preview-wrapper{{ " animated" if animateQR }}'>
+										{% if animateQR %}
+											{{ buildElement('img', {
+												'class': 'qr-code-preview',
+												'src': qr.src,
+												'alt': 'QR Code preview',
+												'srcset': qr.srcset,
+												'width': 20,
+												'height': 20
+											}) }}
+										{% endif %}
+										<div class='qr-code-wrapper'>
+											{{ buildElement('img', {
+												'class': 'qr-code',
+												'src': qr.src,
+												'alt': qr.alt,
+												'srcset': qr.srcset,
+												'width': 120,
+												'height': 120
+											}) }}
+										</div>
+									</div>
+									{% if animateQR %}
+										{{- buildAmount(amount) | trim -}}
+									{% endif %}
+								{% else %}
+									{{- buildAmount(amount) | trim -}}
 								{% endif %}
-								<div class='qr-code-wrapper'>
-									{{ buildElement('img', {
-										'class': 'qr-code',
-										'src': qr.src,
-										'alt': qr.alt,
-										'srcset': qr.srcset,
-										'width': 120,
-										'height': 120
-									}) }}
-								</div>
-							</div>
-							{% if animateQR %}
-								{{- buildAmount(amount) | trim -}}
-							{% endif %}
-						{% else %}
-							{{- buildAmount(amount) | trim -}}
-						{% endif %}
-					</a>
-				</li>
-			{% elseif type == 'recurrent' %}
-				<li class='donation recurrent-donation' data-payment-provider='{{ paymentProvider }}'>
-					<span class='title'>{{ title }}</span>
-					<ul class='quantities'>
-						{%- for amount in amounts -%}
-							{%- set amountHref = amount.href -%}
-							<li class='quantity'>
-								<a class='external-link' href='{{ amountHref if amountHref else href }}' target='{{ "_blank" if openInNewWindow else "_self" }}' rel='noopener noreferrer'>
-									{{ buildAmount(amount) }}
-								</a>
-							</li>
-						{%- endfor -%}
-					</ul>
-				</li>
-			{% endif %}
+							</a>
+						</li>
+					{% elseif type == 'recurrent' %}
+						<li class='donation recurrent-donation' data-payment-provider='{{ paymentProvider }}'>
+							<span class='title'>{{ title }}</span>
+							<ul class='quantities'>
+								{%- for amount in amounts -%}
+									{%- set amountHref = amount.href -%}
+									<li class='quantity'>
+										<a class='external-link' href='{{ amountHref if amountHref else href }}' target='{{ "_blank" if openInNewWindow else "_self" }}' rel='noopener noreferrer'>
+											{{ buildAmount(amount) }}
+										</a>
+									</li>
+								{%- endfor -%}
+							</ul>
+						</li>
+					{% endif %}
+				{% endfor %}
+				</ol>
+			</div>
 		{% endfor %}
-	</ol>
+	</div>
 	{% if disclaimer %}
 		<footer class='footer'>
 			<small class='disclaimer'>
