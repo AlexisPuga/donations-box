@@ -99,13 +99,9 @@
 	padding: 0 1em;
 }
 
-#donation-box:not(.is-open) .donations {
-	display: none;
-}
-
+#donation-box:not(.is-open) .donations,
 #donation-box.is-open .show-donations-button {
-	/* Using this instead of display: none preserves the container's height */
-	visibility: hidden;
+	display: none;
 }
 
 /* Move amount all the way to the right. */
@@ -301,6 +297,12 @@
 		/* Use box-shadow instead of border */
 		box-shadow: 0 0 5px rgba(0, 0, 0, .1);
 		border: 0;
+	}
+
+	#donation-box[data-max-columns='2'].has-headline.has-disclaimer.is-open .show-donations-button {
+		/* Make sure to use visibility: hidden; instead of display: none; to preserve the container's height */
+		display: block;
+		visibility: hidden;
 	}
 
 }
