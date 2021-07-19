@@ -4,7 +4,6 @@
 	border: 0;
 	padding: 0;
 	margin: 0;
-	outline: 0;
 	box-sizing: border-box;
 }
 
@@ -49,8 +48,7 @@
 
 /* Use a black border with a black bolder font. */
 .d10x-c .button {
-	border: 1px solid black;
-	color: black;
+	border: 1px solid currentColor;
 	font-weight: bold;
 	text-decoration: unset;
 	font-size: .9em;
@@ -59,6 +57,11 @@
 	padding: .25em 1.5em;
 	/* Allow moving it to the left/right. */
 	display: table;
+}
+
+/* Show link color on :hover/:focus */
+.d10x-c a.button:not(:focus):not(:hover) {
+	color: black;
 }
 
 .d10x-c .header .show-donations-button {
@@ -115,8 +118,8 @@
 	width: 100%;
 }
 
-/* Remove underline decoration on .donation text */
-.d10x-c .donation a {
+/* Remove underline decoration on all links; just change color on :focus/:hover */
+.d10x-c a {
 	text-decoration: none;
 }
 
@@ -261,17 +264,8 @@
 }
 
 /* Show link color on select. */
-.d10x-c .donation:not(:hover):not(:focus) a {
+.d10x-c a:not(:hover):not(:focus) {
 	color: inherit;
-}
-
-/*
- * If the container is a link, turn all non
- * selected elements black (and left the
- * selected element with the link's color).
- */
-.d10x-c .recurrent-donation .amount:not(:hover):not(:focus) {
-	color: black;
 }
 
 /* Use a bold font on the selected title. */
