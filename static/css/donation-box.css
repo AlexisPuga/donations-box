@@ -12,7 +12,7 @@
 	font-family: helvetica, arial, sans-serif;
 	/* Use minimum width */
 	display: table;
-	background: white;
+	background: #fafafa;
 	/* Decorational */
 	border: 1px solid #eee;
 	font-size: 16px;
@@ -22,15 +22,21 @@
 	width: 100%;
 }
 
+.d10x-c .donations,
+.d10x-c .header {
+	background: white;
+}
+
 .d10x-c .donations {
 	list-style: none;
 	/* Prevent showing .d10x-c's border */
-	background: white;
 	display: table;
 	/* Use borders on smallest view */
 	border: 1px solid #eee;
 	/* Overlap borders */
 	margin: -1px;
+	/* Stay on top */
+	position: relative;
 }
 
 .d10x-c .header {
