@@ -6,9 +6,9 @@
 	'headline': 'has-headline',
 	'disclaimer': 'has-disclaimer'
 } %}
-<link rel='stylesheet' href='/css/donation-box.min.css'/>
 {# Always set states.open to show donations even if js is not being used. #}
 <aside id='donation-box' data-theme='compact' class='d10x-c {{ states.open }} {{ states.headline if headline }} {{ states.disclaimer if disclaimer }}' data-states='{{ states | dump }}' data-max-columns='{{ maxColumns if maxColumns < 3 and maxColumns > 0 else 2 }}'>
+	<link rel='stylesheet' href='/css/donation-box.min.css'/>
 	<header class='header'>
 		<div class='beneficiary-icon-wrapper icon-wrapper'>
 			{% set icon = beneficiary.icon %}
