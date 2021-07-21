@@ -12,6 +12,19 @@ module.exports = {
 		'run': [{
 			'cmd': 'nunjucks-to-html',
 			'args': ['*.njk', '--baseDir', 'static']
+		}, {
+			'cmd': 'html-minifier',
+			'args': [
+				'--collapse-whitespace',
+				'--remove-comments',
+				'--remove-redundant-attributes',
+				'--remove-script-type-attributes',
+				'--minify-css', 'true',
+				'--minify-js', 'true',
+				'--input-dir', 'public',
+				'--output-dir', 'public',
+				'--file-ext', 'html'
+			]
 		}]
 	}, {
 		'pattern': ['static/css/*.css'],
