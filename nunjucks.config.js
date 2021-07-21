@@ -16,7 +16,6 @@ module.exports = {
 					'href': '/beneficiary.html?icon'
 				}
 			},
-			'size': 'small',
 			// This donations are examples.
 			// You can modify them any way you want.
 			'donations': {
