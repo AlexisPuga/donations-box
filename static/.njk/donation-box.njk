@@ -53,16 +53,31 @@
 							return states;
 
 						})(mainElement, statesAttributeName);
+						var removeState = function (element, state) {
+
+							// Use className to add <= IE9 support.
+							// Don't use trim as is not supported in IE9 D:
+							element.className = element.className.replace(
+								new RegExp('\s*' + state),
+								''
+							).replace(/\s+$/, '');
+
+						};
+						var addState = function (element, state) {
+
+							element.className += ' ' + state;
+
+						};
 						var STATE_OPEN = states.open;
 						var showDonationsButton = mainElement.querySelector('.header .show-donations-button');
 
 						// Remove the open state if it's using js.
-						mainElement.classList.remove(STATE_OPEN);
+						removeState(mainElement, STATE_OPEN);
 
 						showDonationsButton.addEventListener('click', function setOpenState (e) {
 
 							this.removeEventListener('click', setOpenState, false);
-							mainElement.classList.add(STATE_OPEN);
+							addState(mainElement, STATE_OPEN);
 
 						}, false);
 
