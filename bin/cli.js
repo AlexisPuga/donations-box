@@ -4,8 +4,11 @@ const fs = require('fs');
 const yargs = require('yargs/yargs');
 const glob = require('glob');
 const {argv} = yargs(process.argv.slice(2))
-	.demandCommand(1)
-	.usage('$0 <files...> [options]', 'Inject the donations box\'s markup in the given files.', (yargs) => yargs
+	.demandCommand(2)
+	.usage('$0 <configFile> <files...> [options]', 'Inject the donations box\'s markup in the given files.', (yargs) => yargs
+		.positional('configFile', {
+			'describe': 'Path to your configuration file. See the Configure section in the README file to know more.'
+		})
 		.positional('files', {
 			'describe': 'Files to inject the donations box\'s markup. (Globs supported).'
 		})
