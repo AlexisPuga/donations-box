@@ -20,6 +20,13 @@ const {argv} = yargs(process.argv.slice(2))
 	);
 const {token, files, config} = argv;
 const markupFilepath = 'dist/donations-box.html';
+const eachFilepath = (files, fn) => {
+
+	const filepaths = glob.sync(files);
+
+	filepaths.forEach(fn);
+
+};
 
 exec('npm run build', {
 	'env': {
@@ -35,11 +42,9 @@ exec('npm run build', {
 
 	const markup = fs.readFileSync(markupFilepath);
 
-	glob(files, (error, filepaths) => {
+	try {
 
-		if (error) { return void console.error('[donations-box] error:', error); }
-
-		filepaths.forEach((filepath) => {
+		eachFilepath(files, (filepath) => {
 
 			const file = fs.readFileSync(filepath).toString();
 			const replacedFile = file.replace(token, markup);
@@ -50,6 +55,7 @@ exec('npm run build', {
 
 		});
 
-	});
+	}
+	catch (error) { return void console.error('[donations-box] Error:', error); }
 
 });
