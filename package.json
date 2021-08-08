@@ -30,5 +30,8 @@
     "live-server": "github:AlexisPuga/live-server",
     "nunjucks-to-html": "^1.0.1",
     "precise-watcher": "^1.0.1"
+  },
+  "dependencies": {
+    "glob": "^7.1.7"
   }
 }
