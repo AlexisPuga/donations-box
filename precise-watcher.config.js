@@ -7,11 +7,11 @@ module.exports = {
 			'args': ['public'],
 		}]
 	}, {
-		'pattern': ['static/**/*.njk', 'static/.njk/**/*.njk', 'nunjucks.config.js'],
+		'pattern': ['static/**/*.njk', 'static/.njk/**/*.njk', 'nunjucks.development.js'],
 		'on': ['ready', 'change'],
 		'run': [{
 			'cmd': 'nunjucks-to-html',
-			'args': ['*.njk', '--baseDir', 'static']
+			'args': ['*.njk', '--baseDir', 'static', '--config', 'nunjucks.development.js']
 		}, {
 			'cmd': 'html-minifier',
 			'args': [
