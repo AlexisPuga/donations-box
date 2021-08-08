@@ -17,10 +17,16 @@ const {argv} = yargs(process.argv.slice(2))
 			'default': '<!-- donations-box -->'
 		})
 	);
-const {token, files} = argv;
+const {token, files, configFile} = argv;
 const markupFilepath = 'dist/donations-box.html';
 
-exec('npm run build', (error, stdout, stderr) => {
+exec('npm run build', {
+	'env': {
+		...process.env,
+		// Send this variable to nunjucks-to-html command within the build script.
+		'DONATIONS_BOX_CONFIG_FILE': configFile
+	}
+}, (error, stdout, stderr) => {
 
 	if (error) { return void console.error('[donations-box] error:', error); }
 	if (stderr) { console.error('[donations-box] stderr:', stderr); }
