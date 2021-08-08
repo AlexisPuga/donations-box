@@ -5,7 +5,7 @@ First, create your configuration file (`my-config`, for example). [See here for 
 
 Then, right before you publish your site:
 1. Add `<!-- donations-box -->` to any file (`my-file`, for example).
-2. Run `donations-box my-config my-file`. (Make sure to replace `my-config` and `my-file` with your files).
+2. Run `donations-box my-file --config my-config`. (Make sure to replace `my-config` and `my-file` with your files).
 3. Check if `my-file` was updated and publish your website as you normally do!
 
 ## Configuration

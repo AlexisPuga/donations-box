@@ -4,27 +4,28 @@ const fs = require('fs');
 const yargs = require('yargs/yargs');
 const glob = require('glob');
 const {argv} = yargs(process.argv.slice(2))
-	.demandCommand(2)
-	.usage('$0 <configFile> <files...> [options]', 'Inject the donations box\'s markup in the given files.', (yargs) => yargs
-		.positional('configFile', {
-			'describe': 'Path to your configuration file. See the Configure section in the README file to know more.'
-		})
+	.demandCommand(1)
+	.usage('$0 <files...> [options]', 'Inject the donations box\'s markup in the given files.', (yargs) => yargs
 		.positional('files', {
 			'describe': 'Files to inject the donations box\'s markup. (Globs supported).'
+		})
+		.option('config', {
+			'describe': 'Path to your configuration file. See the Configure section in the README file to know more.'
 		})
 		.option('token', {
 			'describe': 'String to be replaced by the donations box\'s markup.',
 			'default': '<!-- donations-box -->'
 		})
+		.demandOption('config', 'Please provide the path to your configuration file using --config [filepath].')
 	);
-const {token, files, configFile} = argv;
+const {token, files, config} = argv;
 const markupFilepath = 'dist/donations-box.html';
 
 exec('npm run build', {
 	'env': {
 		...process.env,
 		// Send this variable to nunjucks-to-html command within the build script.
-		'DONATIONS_BOX_CONFIG_FILE': configFile
+		'DONATIONS_BOX_CONFIG_FILE': config
 	}
 }, (error, stdout, stderr) => {
 
