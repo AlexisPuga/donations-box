@@ -4,6 +4,12 @@
   "version": "1.0.0-dev",
   "description": "A widget to ask for donations.",
   "main": "src/index.js",
+  "files": [
+    "nunjucks.production.js",
+    "static/.njk",
+    "src",
+    "bin"
+  ],
   "bin": {
     "donations-box": "bin/cli.js"
   },
