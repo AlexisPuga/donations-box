@@ -2,7 +2,7 @@
   "private": true,
   "name": "donations-box",
   "version": "1.0.0-dev",
-  "description": "",
+  "description": "A widget to ask for donations.",
   "main": "index.js",
   "bin": {
     "donations-box": "bin/cli.js"
