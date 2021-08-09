@@ -1,6 +1,7 @@
 const {exec} = require('child_process');
 const fs = require('fs');
 const path = require('path');
+const inject = require('./inject');
 const eachFilepath = require('./lib/each-filepath');
 const ensureDirectory = require('./lib/ensure-directory');
 
@@ -24,20 +25,7 @@ module.exports = ({token, files, config, assetsDir}) => {
 
 		const markup = fs.readFileSync(markupFilepath);
 
-		try {
-
-			eachFilepath(files, (filepath) => {
-
-				const file = fs.readFileSync(filepath).toString();
-				const replacedFile = file.replace(token, markup);
-				/** @TODO Allow replacing in another file. I.e: Prevent overrides. */
-				const outFile = filepath;
-
-				fs.writeFileSync(outFile, replacedFile);
-
-			});
-
-		}
+		try { inject(markup, files, {token}); }
 		catch (error) { return void console.error('[donations-box] Error:', error); }
 
 		try {
