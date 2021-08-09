@@ -1,4 +1,8 @@
-# donations-box
+# Donations Box
+
+A widget to ask for donations.
+
+List links for your donations in a pretty way.
 
 ## Usage
 First, create your configuration file (`my-config`, for example). [See here for more information](#Configuration).
