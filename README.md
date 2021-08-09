@@ -273,3 +273,5 @@ module.exports = {
 	}
 };
 ```
+## License
+This project is under the [MIT License](LICENSE), unless otherwise stated.
