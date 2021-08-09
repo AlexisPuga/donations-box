@@ -8,6 +8,27 @@ Then, right before you publish your site:
 2. Run `donations-box my-file --config my-config`. (Make sure to replace `my-config` and `my-file` with your files).
 3. Check if `my-file` was updated and publish your website as you normally do!
 
+### Options
+If you need to change anything, try setting any of the following options:
+```cli
+donations-box <files...> [options]
+
+Inject the donations box's markup in the given files.
+
+Positionals:
+  files  Files to inject the donations box's markup. (Globs supported).
+
+Options:
+  --help       Show help                                              [boolean]
+  --version    Show version number                                    [boolean]
+  --config     Path to your configuration file. See the Configure section in
+               the README file to know more.                         [required]
+  --assetsDir  Directory in which the assets for this project will be stored.
+               E.g: The css file.                           [default: "public"]
+  --token      String to be replaced by the donations box's markup.
+                                             [default: "<!-- donations-box -->"]
+```
+
 ## Configuration
 Create a new js/json file with any of the following options (remember that all the options are used for display purposes):
 
