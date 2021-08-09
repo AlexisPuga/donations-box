@@ -1,20 +1,13 @@
 const {exec} = require('child_process');
 const fs = require('fs');
 const path = require('path');
-const glob = require('glob');
+const eachFilepath = require('./lib/each-filepath');
 
 module.exports = ({token, files, config, assetsDir}) => {
 
 	const destinationDir = path.resolve('dist');
 	const markupFilepath = path.resolve(destinationDir, 'donations-box.html');
 	const assetsFilepath = path.resolve(destinationDir, '**', '*.css');
-	const eachFilepath = (files, fn) => {
-
-		const filepaths = glob.sync(files);
-
-		filepaths.forEach(fn);
-
-	};
 	const ensureDirectory = (filepath) => {
 
 		const directory = path.dirname(filepath);
