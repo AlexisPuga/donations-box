@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const yargs = require('yargs/yargs');
-const distribute = require('../src/distribute');
+const donationsBox = require('../src');
 const {argv} = yargs(process.argv.slice(2))
 	.demandCommand(1)
 	.usage('$0 <files...> [options]', 'Inject the donations box\'s markup in the given files.', (yargs) => yargs
@@ -23,7 +23,7 @@ const {argv} = yargs(process.argv.slice(2))
 
 (async () => {
 
-	try { await distribute(argv); }
+	try { await donationsBox(argv); }
 	catch (exception) { console.error('[donations-box]:', exception); }
 
 })();
