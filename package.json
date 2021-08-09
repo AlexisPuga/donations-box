@@ -4,6 +4,9 @@
   "version": "1.0.0-dev",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "donations-box": "bin/cli.js"
+  },
   "scripts": {
     "dev": "npm run watch",
     "watch": "precise-watcher --config precise-watcher.config.js",
