@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const {exec} = require('child_process');
 const fs = require('fs');
+const path = require('path');
 const yargs = require('yargs/yargs');
 const glob = require('glob');
 const {argv} = yargs(process.argv.slice(2))
@@ -12,19 +13,38 @@ const {argv} = yargs(process.argv.slice(2))
 		.option('config', {
 			'describe': 'Path to your configuration file. See the Configure section in the README file to know more.'
 		})
+		.option('assetsDir', {
+			'describe': 'Directory in which the assets for this project will be stored. E.g: The css file.',
+			'default': 'public'
+		})
 		.option('token', {
 			'describe': 'String to be replaced by the donations box\'s markup.',
 			'default': '<!-- donations-box -->'
 		})
 		.demandOption('config', 'Please provide the path to your configuration file using --config [filepath].')
 	);
-const {token, files, config} = argv;
-const markupFilepath = 'dist/donations-box.html';
+const {token, files, config, assetsDir} = argv;
+const destinationDir = path.resolve('dist');
+const markupFilepath = path.resolve(destinationDir, 'donations-box.html');
+const assetsFilepath = path.resolve(destinationDir, '**', '*.css');
 const eachFilepath = (files, fn) => {
 
 	const filepaths = glob.sync(files);
 
 	filepaths.forEach(fn);
+
+};
+const ensureDirectory = (filepath) => {
+
+	const directory = path.dirname(filepath);
+
+	if (!fs.existsSync(directory)) {
+
+		fs.mkdirSync(directory, {
+			'recursive': true
+		});
+
+	}
 
 };
 
@@ -57,5 +77,19 @@ exec('npm run build', {
 
 	}
 	catch (error) { return void console.error('[donations-box] Error:', error); }
+
+	try {
+
+		eachFilepath(assetsFilepath, (filepath) => {
+
+			const destinationFilepath = filepath.replace(destinationDir, assetsDir);
+
+			ensureDirectory(destinationFilepath);
+			fs.copyFileSync(filepath, destinationFilepath);
+
+		});
+
+	}
+	catch (error) { return void console.error('[donations-box] Error while copying assets:', error); }
 
 });
