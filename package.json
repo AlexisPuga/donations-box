@@ -35,7 +35,6 @@
   },
   "homepage": "https://github.com/donations-box/donations-box#readme",
   "devDependencies": {
-    "live-server": "github:AlexisPuga/live-server",
     "precise-watcher": "^1.0.1",
     "servor": "^4.0.2"
   },
