@@ -10,7 +10,7 @@ module.exports = async ({token, files, config, assetsDir}) => {
 
 	await buildAssets({config});
 
-	try { injectMarkup(markupFilepath, files, {token}); }
+	try { await injectMarkup(markupFilepath, files, {token}); }
 	catch (error) { return void console.error('[donations-box] Error:', error); }
 
 	try { copyAssets(destinationDir, assetsDir); }

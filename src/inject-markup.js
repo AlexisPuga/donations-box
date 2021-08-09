@@ -1,7 +1,7 @@
 const fs = require('fs');
 const eachFilepath = require('./lib/each-filepath');
 
-module.exports = (markupFilepath, files, {token}) => {
+module.exports = async (markupFilepath, files, {token}) => {
 
 	const markup = fs.readFileSync(markupFilepath);
 
