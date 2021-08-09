@@ -3,8 +3,8 @@ module.exports = {
 		'pattern': 'public',
 		'on': 'ready',
 		'run': [{
-			'cmd': 'live-server',
-			'args': ['public'],
+			'cmd': 'servor',
+			'args': ['public', '--browse', '--reload'],
 		}]
 	}, {
 		'pattern': ['static/**/*.njk', 'static/.njk/**/*.njk', 'nunjucks.development.js'],
