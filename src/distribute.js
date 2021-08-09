@@ -8,7 +8,8 @@ module.exports = async ({token, files, config, assetsDir}) => {
 	const destinationDir = path.resolve('dist');
 	const markupFilepath = path.resolve(destinationDir, 'donations-box.html');
 
-	await buildAssets({config});
+	try { await buildAssets({config}); }
+	catch (error) { return void console.error('[donations-box] Error building assets:', error); }
 
 	try { await injectMarkup(markupFilepath, files, {token}); }
 	catch (error) { return void console.error('[donations-box] Error injecting markup:', error); }
