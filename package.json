@@ -27,7 +27,6 @@
   },
   "homepage": "https://github.com/donations-box/donations-box#readme",
   "devDependencies": {
-    "cpy-cli": "^3.1.1",
     "html-minifier": "^4.0.0",
     "live-server": "github:AlexisPuga/live-server",
     "nunjucks-to-html": "^1.0.1",
@@ -35,6 +34,7 @@
   },
   "dependencies": {
     "clean-css-cli": "^5.3.3",
+    "cpy-cli": "^3.1.1",
     "glob": "^7.1.7",
     "yargs": "^17.1.0"
   }
