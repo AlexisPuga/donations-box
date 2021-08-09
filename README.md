@@ -4,6 +4,10 @@ A widget to ask for donations.
 
 List links for your donations in a pretty way.
 
+## Installation
+
+Run `npm i donations-box --save` or `yarn add donations-box`.
+
 ## Usage
 First, create your configuration file (`my-config`, for example). [See here for more information](#Configuration).
 
