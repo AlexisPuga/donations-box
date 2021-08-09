@@ -3,10 +3,11 @@ const injectMarkup = require('./inject-markup');
 const copyAssets = require('./copy-assets');
 const buildAssets = require('./build-assets');
 const {BuildError, InjectionError, CopyError} = require('./errors');
+const PROJECT_ROOT = path.resolve(__dirname, '..');
 
 module.exports = async ({token, files, config, assetsDir}) => {
 
-	const destinationDir = path.resolve('dist');
+	const destinationDir = path.resolve(PROJECT_ROOT, 'dist');
 	const markupFilepath = path.resolve(destinationDir, 'donations-box.html');
 
 	try { await buildAssets({config}); }
