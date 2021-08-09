@@ -11,7 +11,7 @@ module.exports = async ({token, files, config, assetsDir}) => {
 	await buildAssets({config});
 
 	try { await injectMarkup(markupFilepath, files, {token}); }
-	catch (error) { return void console.error('[donations-box] Error:', error); }
+	catch (error) { return void console.error('[donations-box] Error injecting markup:', error); }
 
 	try { await copyAssets(destinationDir, assetsDir); }
 	catch (error) { return void console.error('[donations-box] Error while copying assets:', error); }
