@@ -24,6 +24,6 @@ const {argv} = yargs(process.argv.slice(2))
 (async () => {
 
 	try { await distribute(argv); }
-	catch (exception) { console.error('[donations-box] exception:', exception); }
+	catch (exception) { console.error('[donations-box]:', exception); }
 
 })();
