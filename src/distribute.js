@@ -8,21 +8,17 @@ module.exports = async ({token, files, config, assetsDir}) => {
 
 	const destinationDir = path.resolve('dist');
 	const markupFilepath = path.resolve(destinationDir, 'donations-box.html');
+	const {stdout, stderr} = await buildAssets({config});
 
-	buildAssets({config}, (error, {stdout, stderr}) => {
+	if (stderr) { console.error('[donations-box] stderr:', stderr); }
+	if (stdout) { console.log('[donations-box]', stdout); }
 
-		if (error) { return void console.error('[donations-box] error:', error); }
-		if (stderr) { console.error('[donations-box] stderr:', stderr); }
-		if (stdout) { console.log('[donations-box]', stdout); }
+	const markup = fs.readFileSync(markupFilepath);
 
-		const markup = fs.readFileSync(markupFilepath);
+	try { inject(markup, files, {token}); }
+	catch (error) { return void console.error('[donations-box] Error:', error); }
 
-		try { inject(markup, files, {token}); }
-		catch (error) { return void console.error('[donations-box] Error:', error); }
-
-		try { copyAssets(destinationDir, assetsDir); }
-		catch (error) { return void console.error('[donations-box] Error while copying assets:', error); }
-
-	});
+	try { copyAssets(destinationDir, assetsDir); }
+	catch (error) { return void console.error('[donations-box] Error while copying assets:', error); }
 
 };

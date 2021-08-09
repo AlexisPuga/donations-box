@@ -1,6 +1,6 @@
 const {exec} = require('child_process');
 
-module.exports = ({config}, cb) => {
+module.exports = ({config}) => new Promise((resolve, reject) => {
 
 	exec('npm run build', {
 		'env': {
@@ -10,10 +10,10 @@ module.exports = ({config}, cb) => {
 		}
 	}, (error, stdout, stderr) => {
 
-		if (error) { return void cb(error); }
+		if (error) { return void reject(error); }
 
-		cb(null, {stdout, stderr});
+		resolve({stdout, stderr});
 
 	});
 
-};
+});
