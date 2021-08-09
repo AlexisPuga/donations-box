@@ -3,7 +3,7 @@
   "name": "donations-box",
   "version": "1.0.0-dev",
   "description": "A widget to ask for donations.",
-  "main": "index.js",
+  "main": "src/index.js",
   "bin": {
     "donations-box": "bin/cli.js"
   },
