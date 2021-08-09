@@ -11,8 +11,10 @@ module.exports = ({config}) => new Promise((resolve, reject) => {
 	}, (error, stdout, stderr) => {
 
 		if (error) { return void reject(error); }
+		if (stderr) { console.error('[donations-box] stderr:', stderr); }
+		if (stdout) { console.log('[donations-box]', stdout); }
 
-		resolve({stdout, stderr});
+		resolve();
 
 	});
 

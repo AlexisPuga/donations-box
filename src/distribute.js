@@ -8,10 +8,8 @@ module.exports = async ({token, files, config, assetsDir}) => {
 
 	const destinationDir = path.resolve('dist');
 	const markupFilepath = path.resolve(destinationDir, 'donations-box.html');
-	const {stdout, stderr} = await buildAssets({config});
 
-	if (stderr) { console.error('[donations-box] stderr:', stderr); }
-	if (stdout) { console.log('[donations-box]', stdout); }
+	await buildAssets({config});
 
 	const markup = fs.readFileSync(markupFilepath);
 
