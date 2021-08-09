@@ -8,11 +8,11 @@ module.exports = {
 	'render': {
 		'context': {
 			'beneficiary': {
-				'alias': 'Donation Box',
+				'alias': 'Donations Box',
 				'href': '/beneficiary.html',
 				'icon': {
 					'src': '/favicon.svg',
-					'alt': 'Donation Box icon',
+					'alt': 'Donations Box icon',
 					'href': '/beneficiary.html?icon'
 				}
 			},
@@ -75,7 +75,7 @@ module.exports = {
 						'href': 'monero:8Bqeu7beB2ocwTr1Gn4gz6VUUoqVDokiR9WAY2E8m5toNSbRvRMrWjgWYnaNGchWc2cVRgVvidNpLjZF5vXJnauf7s2oHPw',
 						'qr': {
 							'src': '/img/monero-qr.png',
-							'alt': 'Donation Box\'s Monero QR Code',
+							'alt': 'Donations Box\'s Monero QR Code',
 							'srcset': '/img/monero-qr.png 2x'
 						},
 						'currency': {

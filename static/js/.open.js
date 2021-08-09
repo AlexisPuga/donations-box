@@ -41,4 +41,4 @@
 
 	}, false);
 
-})(document.getElementById('donation-box'), 'data-states');
+})(document.getElementById('donations-box'), 'data-states');

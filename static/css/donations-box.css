@@ -108,8 +108,8 @@
 	padding: 0 1em;
 }
 
-#donation-box:not(.is-open) .donations,
-#donation-box.is-open .show-donations-button {
+#donations-box:not(.is-open) .donations,
+#donations-box.is-open .show-donations-button {
 	display: none;
 }
 
@@ -314,7 +314,7 @@
 		border: 0;
 	}
 
-	#donation-box[data-max-columns='2'].has-headline.has-disclaimer.is-open .show-donations-button {
+	#donations-box[data-max-columns='2'].has-headline.has-disclaimer.is-open .show-donations-button {
 		/* Make sure to use visibility: hidden; instead of display: none; to preserve the container's height */
 		display: block;
 		visibility: hidden;

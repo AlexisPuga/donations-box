@@ -32,9 +32,9 @@ module.exports = {
 		'run': [{
 			'cmd': 'cleancss',
 			'args': [
-				'static/css/donation-box.css',
+				'static/css/donations-box.css',
 				'-c', 'ie9',
-				'-o', 'public/css/donation-box.min.css'
+				'-o', 'public/css/donations-box.min.css'
 			]
 		}]
 	}, {

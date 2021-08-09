@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "donation-box",
+  "name": "donations-box",
   "version": "1.0.0-dev",
   "description": "",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlexisPuga/donation-box.git"
+    "url": "git+https://github.com/donations-box/donations-box.git"
   },
   "author": "Alexis Puga",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AlexisPuga/donation-box/issues"
+    "url": "https://github.com/donations-box/donations-box/issues"
   },
-  "homepage": "https://github.com/AlexisPuga/donation-box#readme",
+  "homepage": "https://github.com/donations-box/donations-box#readme",
   "devDependencies": {
     "clean-css-cli": "^5.3.0",
     "cpy-cli": "^3.1.1",
