@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "donations-box",
   "version": "1.0.0-dev",
   "description": "A widget to ask for donations.",
@@ -10,6 +9,9 @@
     "src",
     "bin"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "bin": {
     "donations-box": "bin/cli.js"
   },
