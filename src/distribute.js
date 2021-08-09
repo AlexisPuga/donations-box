@@ -2,25 +2,13 @@ const {exec} = require('child_process');
 const fs = require('fs');
 const path = require('path');
 const eachFilepath = require('./lib/each-filepath');
+const ensureDirectory = require('./lib/ensure-directory');
 
 module.exports = ({token, files, config, assetsDir}) => {
 
 	const destinationDir = path.resolve('dist');
 	const markupFilepath = path.resolve(destinationDir, 'donations-box.html');
 	const assetsFilepath = path.resolve(destinationDir, '**', '*.css');
-	const ensureDirectory = (filepath) => {
-
-		const directory = path.dirname(filepath);
-
-		if (!fs.existsSync(directory)) {
-
-			fs.mkdirSync(directory, {
-				'recursive': true
-			});
-
-		}
-
-	};
 
 	exec('npm run build', {
 		'env': {
