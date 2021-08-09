@@ -4,7 +4,7 @@ const inject = require('./inject');
 const copyAssets = require('./copy-assets');
 const buildAssets = require('./build-assets');
 
-module.exports = ({token, files, config, assetsDir}) => {
+module.exports = async ({token, files, config, assetsDir}) => {
 
 	const destinationDir = path.resolve('dist');
 	const markupFilepath = path.resolve(destinationDir, 'donations-box.html');

@@ -21,4 +21,9 @@ const {argv} = yargs(process.argv.slice(2))
 		.demandOption('config', 'Please provide the path to your configuration file using --config [filepath].')
 	);
 
-distribute(argv);
+(async () => {
+
+	try { await distribute(argv); }
+	catch (exception) { console.error('[donations-box] exception:', exception); }
+
+})();
