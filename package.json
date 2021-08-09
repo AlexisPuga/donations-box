@@ -6,6 +6,7 @@
   "files": [
     "nunjucks.production.js",
     "static/.njk",
+    "static/css",
     "src",
     "bin"
   ],
