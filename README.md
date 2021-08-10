@@ -9,7 +9,7 @@ List links for your donations in a pretty way.
 Run `npm i donations-box --save` or `yarn add donations-box`.
 
 ## Usage
-First, create your configuration file (`my-config`, for example). [See here for more information](#Configuration).
+First, create your configuration file called `donations-box.config.js`, in the root of your project. [See here for more information](#Configuration).
 
 Then, right before you publish your site:
 1. Add `<!-- donations-box -->` to any file (`my-file`, for example).
@@ -17,7 +17,7 @@ Then, right before you publish your site:
 3. Check if `my-file` was updated and publish your website as you normally do!
 
 ### CLI
-Run `donations-box my-file --config my-config`. (Make sure to replace `my-config` and `my-file` with your files).
+Run `donations-box my-file`. (Make sure to replace `my-file` with your files).
 
 #### Options
 If you need to change anything, try setting any of the following options:
@@ -32,8 +32,9 @@ Positionals:
 Options:
   --help       Show help                                              [boolean]
   --version    Show version number                                    [boolean]
-  --config     Path to your configuration file. See the Configure section in
-               the README file to know more.                         [required]
+  --config     Path to your configuration file. See the Configure section in the
+               README file to know more.
+                                 [required] [default: "donations-box.config.js"]
   --assetsDir  Directory in which the assets for this project will be stored.
                E.g: The css file.                           [default: "public"]
   --token      String to be replaced by the donations box's markup.

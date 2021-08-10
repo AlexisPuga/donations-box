@@ -8,7 +8,8 @@ const {argv} = yargs(process.argv.slice(2))
 			'describe': 'Files to inject the donations box\'s markup. (Globs supported).'
 		})
 		.option('config', {
-			'describe': 'Path to your configuration file. See the Configure section in the README file to know more.'
+			'describe': 'Path to your configuration file. See the Configure section in the README file to know more.',
+			'default': 'donations-box.config.js'
 		})
 		.option('assetsDir', {
 			'describe': 'Directory in which the assets for this project will be stored. E.g: The css file.',
