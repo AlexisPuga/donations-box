@@ -12,6 +12,8 @@
 	/* Use minimum width */
 	display: table;
 	background: #fafafa;
+	color: black;
+	text-align: left;
 	/* Decorational */
 	border: 1px solid #eee;
 	font-size: 16px;
