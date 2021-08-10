@@ -5,7 +5,7 @@
 </div>
 
 ## About
-[donation-box](/) is a widget for developers who want to list all their donation links, in a single place.
+[donations-box](/) is a widget for developers who want to list all their donation links, in a single place.
 
 ## Features
 - No Javascript required.
