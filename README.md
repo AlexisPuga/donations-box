@@ -1,23 +1,41 @@
-# Donations Box
+<div align='center'>
+	<img src='/static/favicon.svg' alt='Donations Box Icon: A pink open box with a white heart.' width='100' height='100'/>
+	<h1>Donations Box</h1>
+	<p><strong>Ask for donations in a pretty way.</strong></p>
+</div>
 
-A widget to ask for donations.
+## About
+[donation-box](/) is a widget for developers who want to list all their donation links, in a single place.
 
-List links for your donations in a pretty way.
+## Features
+- No Javascript required.
+- No frames.
+- Easy to use.
+- Configurable.
+- Minified already.
+- Open Source.
 
 ## Installation
-
-Run `npm i donations-box --save` or `yarn add donations-box`.
+- Via NPM: `npm i donations-box -g`.
+- Via YARN: `yarn global add donations-box`.
 
 ## Usage
-First, create your configuration file called `donations-box.config.js`, in the root of your project. [See here for more information](#Configuration).
+To add this widget to your site:
+1. [Install it](#installation).
+2. Create a new file called `donations-box.config.js`, in the root of your project.
+3. Set your donation links and your desired configurations. [See here](#configuration).
+4. Write `<!-- donations-box -->` where you want to include this widget.
+5. Call the [CLI](#cli) or the [JS](#js) version, during you build process.
 
-Then, right before you publish your site:
-1. Add `<!-- donations-box -->` to any file (`my-file`, for example).
-2. Use the [CLI](#CLI) or the [JS](#JS) version.
-3. Check if `my-file` was updated and publish your website as you normally do!
+**And that's it!**
+
+*If everything works as expected, you should see a new file in `public/css`
+called `donations-box.min.css`, and your files where you wrote `<!-- donations-box -->` with the Donations Box's markup.*
 
 ### CLI
-Run `donations-box my-file`. (Make sure to replace `my-file` with your files).
+Run `donations-box my-file`.
+
+*Where `my-file` is where you want to add the widget to*.
 
 #### Options
 If you need to change anything, try setting any of the following options:
@@ -42,7 +60,6 @@ Options:
 ```
 
 ### JS
-Run the following:
 ```js
 const donationsBox = require('donations-box');
 
@@ -93,8 +110,10 @@ const donationsBox = require('donations-box');
 ```
 
 ## Configuration
-Create a new js/json file with any of the following options (remember that all the options are used for display purposes):
+Configuration is done using a `js` or a `json` file, but a `js` file is recommended.
+The only requirement is that the `js` file should export an object with your configurations.
 
+Below are the supported configurations *(remember that all the options are used for display purposes)*:
 ```js
 module.exports = {
 	/**
