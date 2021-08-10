@@ -1,7 +1,14 @@
-<div align='center'>
-	<img src='/static/favicon.svg' alt='Donations Box Icon: A pink open box with a white heart.' width='100' height='100'/>
-	<h1>Donations Box</h1>
-	<p><strong>Ask for donations in a pretty way.</strong></p>
+<div>
+	<div align='right'>
+		<a href='https://www.npmjs.com/package/donations-box'>
+			<img src='https://img.shields.io/npm/v/donations-box?label=donations-box&color=success&style=flat-square' alt='Current version (NPM)'/>
+		</a>
+	</div>
+	<div align='center'>
+		<img src='/static/favicon.svg' alt='Donations Box Icon: A pink open box with a white heart.' width='100' height='100'/>
+		<h1>Donations Box</h1>
+		<p><strong>Ask for donations in a pretty way.</strong></p>
+	</div>
 </div>
 
 ## About
