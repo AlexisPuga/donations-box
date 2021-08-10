@@ -79,6 +79,19 @@ module.exports = {
 	 */
 	'open': true,
 	/**
+	 * [Only available if headline and disclaimer are set]
+	 * 
+	 * Show this number of columns, when the widget is open, on larger screens.
+	 * 
+	 * Min value: 1
+	 * Max value: 2
+	 * Default value: 2
+	 * Invalid becomes: 2
+	 * 
+	 * @type {?number}
+	 */
+	'maxColumns': 2,
+	/**
 	 * The person/company who is asking for donations.
 	 * 
 	 * @type {!object}
