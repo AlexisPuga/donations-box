@@ -32,6 +32,7 @@
 	list-style: none;
 	/* Prevent showing .d10x-c's border */
 	display: table;
+	width: 100%;
 	/* Use borders on smallest view */
 	border: 1px solid #eee;
 	/* Overlap borders */
