@@ -13,10 +13,13 @@ First, create your configuration file (`my-config`, for example). [See here for 
 
 Then, right before you publish your site:
 1. Add `<!-- donations-box -->` to any file (`my-file`, for example).
-2. Run `donations-box my-file --config my-config`. (Make sure to replace `my-config` and `my-file` with your files).
+2. Use the [CLI](#CLI) or the [JS](#JS) version.
 3. Check if `my-file` was updated and publish your website as you normally do!
 
-### Options
+### CLI
+Run `donations-box my-file --config my-config`. (Make sure to replace `my-config` and `my-file` with your files).
+
+#### Options
 If you need to change anything, try setting any of the following options:
 ```cli
 donations-box <files...> [options]
@@ -35,6 +38,57 @@ Options:
                E.g: The css file.                           [default: "public"]
   --token      String to be replaced by the donations box's markup.
                                              [default: "<!-- donations-box -->"]
+```
+
+### JS
+Run the following:
+```js
+const donationsBox = require('donations-box');
+
+(async () => {
+
+	try {
+
+		/**
+		 * All CLI positionals, and options are supported, except "help", and "version". None is optional.
+		 * 
+		 * To know more about each option, run `donations-box --help` from the CLI.
+		 * 
+		 * @param {!object} options
+		 * @param {!string} options.files
+		 * @param {!string} options.config
+		 * @param {!string} options.assetsDir
+		 * @param {!string} options.token
+		 *
+		 * @returns {Promise}.
+		 */
+		await donationsBox({
+			files: '',
+			config: '',
+			assetsDir: '',
+			token: ''
+		});
+
+	}
+	catch (
+		/** @type {BuildError|CopyError|InjectionError} */
+		exception
+	) {
+
+		/**
+		 * Check exception#name and act accordingly, if you want.
+		 * 
+		 * @example
+		 * const {name} = exception;
+		 *
+		 * if (name === 'BuildError') { console.error('Error building assets.'); }
+		 * else if (name === 'CopyError') { console.error('Error copying assets.'); }
+		 * else if (name === 'InjectionError') { console.error('Error injecting markup.'); }
+		 */
+
+	}
+
+})();
 ```
 
 ## Configuration
