@@ -1,6 +1,6 @@
 {
   "name": "donations-box",
-  "version": "1.0.0-rc.5",
+  "version": "1.0.0-rc.6",
   "description": "A widget to ask for donations.",
   "main": "src/index.js",
   "files": [
