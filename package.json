@@ -8,7 +8,8 @@
     "static/.njk",
     "static/css",
     "src",
-    "bin"
+    "bin",
+    "dist"
   ],
   "publishConfig": {
     "access": "public"
