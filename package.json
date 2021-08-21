@@ -27,6 +27,7 @@
     "minify:css": "cleancss static/css/donations-box.css -c ie9 -o dist/css/donations-box/${npm_package_version}.min.css",
     "build": "npm run build:html && npm run minify:html",
     "prepack": "npm run minify:css",
+    "preversion": "if [ -z \"$ALLOW_NPM_VERSION_SCRIPT\" ]; then echo \"Please use 'npm run release', or 'bin/release' instead.\" && exit 1; fi",
     "release": "bin/release"
   },
   "repository": {

@@ -6,4 +6,4 @@ commitMessage="$VERSION"$'\n\nChanges:\n'
 # Source: https://stackoverflow.com/a/31719777
 commitMessage+=$''`git log --oneline $(git describe --tags --abbrev=0 @^)..@`
 
-npm version "$VERSION" -m "$commitMessage"
+(export ALLOW_NPM_VERSION_SCRIPT=true && npm version "$VERSION" -m "$commitMessage")
