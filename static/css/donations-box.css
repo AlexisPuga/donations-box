@@ -293,7 +293,8 @@
 @media (min-width: 740px) {
 
 	.d10x-c[data-max-columns='2'].has-headline.has-disclaimer.is-open {
-		margin: 0em;
+		/* Update margin to compensate .donations' negative margin */
+		margin: 1em;
 		/* Show 2 columns (360 x 2) + .donations's margin (-1em) */
 		max-width: calc(360px * 2 - 1em);
 	}
