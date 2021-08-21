@@ -26,7 +26,8 @@
     "minify:html": "html-minifier --collapse-whitespace --remove-comments --remove-redundant-attributes --remove-script-type-attributes --minify-css true --minify-js true --input-dir dist --output-dir dist --file-ext html",
     "minify:css": "cleancss static/css/donations-box.css -c ie9 -o dist/css/donations-box/${npm_package_version}.min.css",
     "build": "npm run build:html && npm run minify:html",
-    "prepack": "npm run minify:css"
+    "prepack": "npm run minify:css",
+    "release": "bin/release"
   },
   "repository": {
     "type": "git",
