@@ -34,9 +34,7 @@
 	display: table;
 	width: 100%;
 	/* Use borders on smallest view */
-	border: 1px solid #eee;
-	/* Overlap borders */
-	margin: -1px;
+	border-top: 1px solid #eee;
 	/* Stay on top */
 	position: relative;
 }
