@@ -1,3 +1,4 @@
+const {npm_package_version} = process.env;
 var dollars = {
 	'symbol': '$',
 	'name': 'Dollars',
@@ -7,6 +8,7 @@ var dollars = {
 module.exports = {
 	'render': {
 		'context': {
+			npm_package_version,
 			'beneficiary': {
 				'alias': 'Donations Box',
 				'href': '/beneficiary.html',

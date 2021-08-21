@@ -1,3 +1,5 @@
+const {npm_package_version} = process.env;
+
 module.exports = {
 	'src': [{
 		'pattern': 'public',
@@ -34,7 +36,7 @@ module.exports = {
 			'args': [
 				'static/css/donations-box.css',
 				'-c', 'ie9',
-				'-o', 'public/css/donations-box.min.css'
+				'-o', 'public/css/donations-box/' + npm_package_version + '.min.css'
 			]
 		}]
 	}, {
