@@ -9,7 +9,7 @@
     "static/css",
     "static/js",
     "src",
-    "bin",
+    "bin/cli.js",
     "dist"
   ],
   "publishConfig": {
