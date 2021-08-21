@@ -7,6 +7,7 @@
     "nunjucks.production.js",
     "static/.njk",
     "static/css",
+    "static/js",
     "src",
     "bin",
     "dist"
