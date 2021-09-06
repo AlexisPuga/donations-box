@@ -1,0 +1,158 @@
+<link rel='stylesheet' data-dbox-attr='{
+	"href": "/css/donations-box/${npm_package_version}.min.css"
+}'/>
+<aside id='donations-box' data-dbox-attr='{
+	"class": "d10x-c ${states.open} ${states.headline} ${states.disclaimer}",
+	"data-theme": "${theme}",
+	"data-states": "${JSON.stringify(states)}",
+	"data-max-columns": {
+		"is(maxColumns).lt(3).gt(0)": "${maxColumns}",
+		"!is(maxColumns).lt(3).gt(0)": 2
+	}
+}'>
+	<header class='header'>
+		<div class='beneficiary-icon-wrapper icon-wrapper' data-dbox-as='{
+			"beneficiary.icon": "icon"
+		}'>
+			<a data-dbox-attr='{
+				"href": {
+					"icon.href": "${icon.href}",
+					"!icon.href": "${beneficiary.href}"
+				},
+				"target": {
+					"openInNewWindow": "_blank",
+					"!openInNewWindow": "_self"
+				},
+				"rel": "noopener noreferrer",
+				"data-dbox-html": {
+					"icon.html": "${icon.html}",
+					"!icon.html": null
+				}
+			}'>
+				<img class='beneficiary-icon icon' data-dbox-attr='{
+					"src": "${icon.src}",
+					"alt": {
+						"!icon.src": "icon.alt",
+						"icon.src": "${beneficiary.alias} icon"
+					},
+					"srcset": {
+						"icon.retinaSrc": "${icon.retinaSrc} 2x",
+						"!icon.retinaSrc": "${icon.src}"
+					},
+					"width": 40,
+					"height": 40
+				}'/>
+			</a>
+		</div>
+		<div class='hgroup'>
+			<p class='beneficiary subheading'>
+				<a class='alias' data-dbox-href='{
+					"href": "${beneficiary.href}",
+					"rel": "noopener noreferrer",
+					"target": {
+						"openInNewWindow": "_blank",
+						"!openInNewWindow": "_self"
+					}
+				}' data-dbox='${beneficiary.alias}'></a>
+			</p>
+			<h1 class='heading'>Donations</h1>
+		</div>
+		<div data-dbox-if='headline'>
+			<p class='headline' data-dbox='${headline}'></p>
+			<div data-dbox-if='isAbleToOpen(open)'>
+				<a href='#donations' class='internal-link show-donations-button button'>Donate</a>
+				<script data-dbox-html='${include("/static/js/.open.js")}'></script>
+			</div>
+		</div>
+	</header>
+	<div id='donations' class='donations'>
+		<div class='payment-provider-donations-wrapper' data-dbox-for='paymentProvider, paymentProviderDonations in donations as data-dbox-payprov' data-dbox-payprov-attr='{
+			"data-payment-provider": "${paymentProvider}"
+		}'>
+			<p class='payment-provider' data-dbox-payprov='${paymentProvider}'></p>
+			<ol class='payment-provider-donations' data-dbox-payprov-for='donation in paymentProviderDonations' data-dbox-payprov-as='{
+				"amount": "donation.amounts.0"
+			}'>
+				<div data-dbox-payprov-if='is(type).eq("one-off")' data-dbox-payprov-as='{
+					"qr": {
+						"amount": "${amount.qr}",
+						"!amount": "${donation.qr}"
+					}
+				}'>
+					<li class='donation one-off-donation'>
+						<a class='external-link' data-dbox-payprov='{
+							"href": {
+								"amount.href": "${amount.href}",
+								"!amount.href": "${donation.href}"
+							},
+							"target": {
+								"openInNewWindow": "_blank",
+								"!openInNewWindow": "_self"
+							},
+							"rel": "noopener noreferrer"
+						}'>
+							<span class='title' data-dbox-payprov='${donation.title}'></span>
+							<div data-dbox-payprov-if='qr' data-dbox-payprov-as='{
+								"qr.animate": "animateQR"
+							}'>
+								<div data-dbox-payprov-if='!qr.animate' data-dbox-payprov-html='${buildAmount(amount)}'></div>
+								<div data-dbox-payprov='{
+									"class": {
+										"animateQR": "qr-code-preview-wrapper animated",
+										"!animateQR": "qr-code-preview-wrapper"
+									}" ${animateQR}"
+								}'>
+									<div data-dbox-payprov-if='animateQR'>
+										<img data-dbox-payprov-attr='{
+											"class": "qr-code-preview",
+											"src": "${qr.src}",
+											"alt": "QR Code preview",
+											"srcset": "${qr.srcset}",
+											"width": 20,
+											"height": 20
+										}'/>
+									</div>
+									<div class='qr-code-wrapper'>
+										<img data-dbox-payprov-attr='{
+											"class": "qr-code",
+											"src": "${qr.src}",
+											"alt": "${qr.alt}",
+											"srcset": "${qr.srcset}",
+											"width": 120,
+											"height": 120
+										}'/>
+									</div>
+								</div>
+								<div data-dbox-payprov-if='animateQR' data-dbox-payprov-html='${buildAmount(amount)}'></div>
+							</div>
+							<div data-dbox-payprov-if='!qr' data-dbox-payprov-html='${buildAmount(amount)}'></div>
+						</a>
+					</li>
+				</div>
+				<div data-dbox-if='is(type).eq("recurrent")'>
+					<li class='donation recurrent-donation'>
+						<span class='title' data-dbox-payprov='${donation.title}'></span>
+						<ul class='quantities' data-dbox-payprov-for='amount in donation.amounts'>
+							<li class='quantity'>
+								<a class='external-link' data-dbox-payprov-attr='{
+									"href": {
+										"amount.href": "${amount.href}",
+										"!amount.href": "${donation.href}"
+									},
+									"target": {
+										"openInNewWindow": "_blank",
+										"!openInNewWindow": "_self"
+									},
+									"rel": "noopener noreferrer"
+								}' data-dbox-payprov-html='${buildAmount(amount)}'></a>
+							</li>
+						</ul>
+					</li>
+				</div>
+			</ol>
+		</div>
+	</div>
+	<footer class='footer' data-dbox-if='disclaimer'>
+		<small class='disclaimer' data-dbox-html='${disclaimer}'></small>
+	</footer>
+</aside>
