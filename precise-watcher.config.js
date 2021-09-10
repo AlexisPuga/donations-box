@@ -1,3 +1,4 @@
+const cpy = require('cpy');
 const {npm_package_version} = process.env;
 
 module.exports = {
@@ -50,13 +51,26 @@ module.exports = {
 		'on': ['ready', 'change'],
 		'baseDir': 'static',
 		'run': [{
-			'cmd': 'cpy',
+			/*
+			 * @TODO Use beforeRun's function here when precise-watcher
+			 *       supports them.
+			 */
+			'cmd': 'echo',
 			'args': [
 				'<file>',
-				'../public',
-				'--cwd=static',
-				'--parents'
-			]
+				'../public'
+			],
+			async beforeRun ({args}) {
+
+				const {baseDir} = this;
+				const [source, destination] = args;
+
+				await cpy(source, destination, {
+					'cwd': baseDir,
+					'parents': true
+				});
+
+			}
 		}]
 	}]
 };
