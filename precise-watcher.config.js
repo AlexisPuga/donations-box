@@ -3,6 +3,12 @@ const {npm_package_version} = process.env;
 module.exports = {
 	'src': [{
 		'pattern': 'public',
+		'run': [{
+			'cmd': 'mkdir',
+			'args': ['public']
+		}]
+	}, {
+		'pattern': 'public',
 		'on': 'ready',
 		'run': [{
 			'cmd': 'servor',
