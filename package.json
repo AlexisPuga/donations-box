@@ -47,7 +47,6 @@
   },
   "dependencies": {
     "cpy": "^8.1.2",
-    "cpy-cli": "^3.1.1",
     "glob": "^7.1.7",
     "html-minifier": "^4.0.0",
     "nunjucks-to-html": "^1.0.1",
