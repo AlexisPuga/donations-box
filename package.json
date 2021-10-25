@@ -46,6 +46,7 @@
     "servor": "^4.0.2"
   },
   "dependencies": {
+    "@minify-html/js": "^0.6.10",
     "cpy": "^8.1.2",
     "glob": "^7.1.7",
     "html-minifier": "^4.0.0",
