@@ -21,20 +21,28 @@ module.exports = {
 		'run': [{
 			'cmd': 'nunjucks-to-html',
 			'args': ['*.njk', '--baseDir', 'static', '--config', 'nunjucks.development.js']
-		}, {
-			'cmd': 'html-minifier',
+		}].concat([
+			'public/beneficiary.html',
+			'public/donate.html',
+			'public/index.html'
+		].map((src) => ({
+			'cmd': 'minify-html',
 			'args': [
-				'--collapse-whitespace',
-				'--remove-comments',
-				'--remove-redundant-attributes',
-				'--remove-script-type-attributes',
-				'--minify-css', 'true',
-				'--minify-js', 'true',
-				'--input-dir', 'public',
-				'--output-dir', 'public',
-				'--file-ext', 'html'
-			]
-		}]
+				/** @TODO Use glob patterns, when possible. */
+				src,
+				'--output', src,
+				'--do-not-minify-doctype',
+				'--ensure-spec-compliant-unquoted-attribute-values',
+				'--keep-closing-tags',
+				'--keep-html-and-head-opening-tags',
+				'--keep-spaces-between-attributes',
+				'--minify-js',
+				'--minify-css',
+				'--remove-bangs',
+				'--remove-processing-instructions'
+			],
+			'callNext': 'parallel'
+		})))
 	}, {
 		'pattern': ['static/css/*.css'],
 		'on': ['ready', 'change'],
