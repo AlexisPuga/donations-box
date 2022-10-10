@@ -50,6 +50,6 @@
     "glob": "^8.0.3",
     "html-minifier": "^4.0.0",
     "nunjucks-to-html": "^1.0.1",
-    "yargs": "^17.1.0"
+    "yargs": "^17.6.0"
   }
 }
