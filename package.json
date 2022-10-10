@@ -41,7 +41,7 @@
   },
   "homepage": "https://github.com/donations-box/donations-box#readme",
   "devDependencies": {
-    "clean-css-cli": "^5.3.3",
+    "clean-css-cli": "^5.6.1",
     "precise-watcher": "^2.0.0",
     "servor": "^4.0.2"
   },
